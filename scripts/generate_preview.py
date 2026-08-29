@@ -22,7 +22,7 @@ Required Schema:
   "baseLocation": "City or Region",
   "phone": "Phone Number",
   "email": "contact email",
-  "primaryColor": "#D4AF37",
+  "primaryColor": "#BBA992",
   "heroTitle": "High impact luxury headline",
   "heroSubtitle": "Compelling subheadline focusing on VIP experience.",
   "fleet": [

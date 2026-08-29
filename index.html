@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="meta-title">Luxury Yacht Charters - Private VIP Charter Experience</title>
+  <title id="meta-title">Luxury Yacht Charters - Minimalist VIP Experience</title>
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -11,7 +11,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Plus+Jakarta+Sans:wght@200;300;400;500;600&display=swap" rel="stylesheet">
   
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -31,12 +31,11 @@
           },
           colors: {
             brand: {
-              gold: '#D4AF37',
-              goldLight: '#C5A880',
-            },
-            navy: {
-              900: '#0B0F17',
-              950: '#060B1E',
+              sand: '#BBA992', // Minimal luxury taupe/sand
+              sandLight: '#E3D7C5',
+              charcoal: '#0a0a0a',
+              ash: '#171717',
+              muted: '#737373'
             }
           }
         }
@@ -45,88 +44,79 @@
   </script>
   <style>
     body {
-      background-color: #060B1E;
+      background-color: #0a0a0a;
       overflow-x: hidden;
+      color: #fafafa;
     }
     
     .glass-card {
-      background: rgba(6, 11, 30, 0.4);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(212, 175, 55, 0.2);
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
       transform-style: preserve-3d;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.8);
     }
     
-    /* 3D element lift for vanilla-tilt */
     .glass-card-content {
-      transform: translateZ(30px);
+      transform: translateZ(40px);
     }
     
     .glass-nav {
-      background: rgba(6, 11, 30, 0.6);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      background: rgba(10, 10, 10, 0.5);
+      backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
     
     .glass-nav.scrolled {
-      background: rgba(6, 11, 30, 0.95);
-      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-    }
-    
-    .gold-gradient-text {
-      background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #B8860B 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      background: rgba(10, 10, 10, 0.9);
+      border-bottom: 1px solid rgba(187, 169, 146, 0.15);
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.8);
     }
     
     .parallax-bg {
       will-change: transform;
     }
     
-    /* Ensure no weird scrollbars during animations */
     html {
       overflow-x: hidden;
     }
   </style>
 </head>
-<body class="bg-navy-950 text-slate-100 font-sans antialiased selection:bg-brand-gold selection:text-navy-950">
+<body class="bg-brand-charcoal text-slate-100 font-sans antialiased selection:bg-brand-sand selection:text-brand-charcoal">
 
   <!-- VALUE-FIRST PROTOTYPE BANNER -->
-  <div class="bg-gradient-to-r from-yellow-700 via-yellow-600 to-amber-700 text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium shadow-md flex items-center justify-center gap-2 relative z-[60]">
-    <span class="bg-white/20 px-2 py-0.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-white/30">Live Preview</span>
-    <span>Custom Luxury Prototype Prepared Exclusively for <strong id="banner-biz-name" class="underline decoration-white/50">Azure Horizon Yacht Charters</strong></span>
+  <div class="bg-brand-sand text-brand-charcoal text-xs sm:text-sm py-2 px-4 text-center font-medium shadow-md flex items-center justify-center gap-3 relative z-[60] tracking-wide">
+    <span class="bg-brand-charcoal/10 px-2.5 py-1 rounded-sm text-[10px] font-bold uppercase tracking-widest border border-brand-charcoal/20">Live Preview</span>
+    <span>Bespoke Digital Prototype Prepared Exclusively for <strong id="banner-biz-name" class="underline decoration-brand-charcoal/30 underline-offset-4">Azure Horizon Yacht Charters</strong></span>
   </div>
 
   <!-- NAVIGATION -->
-  <header id="main-nav" class="fixed top-[40px] w-full z-50 glass-nav transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between transition-all duration-300" id="nav-container">
-      <div class="flex items-center space-x-3 cursor-pointer gsap-nav-item">
-        <div class="w-14 h-14 flex items-center justify-center transition-all" id="nav-logo-box">
-          <img src="./assets/images/logo.png" alt="Logo" class="w-full h-full object-contain rounded-full shadow-lg shadow-brand-gold/20 bg-white p-1">
+  <header id="main-nav" class="fixed top-[44px] w-full z-50 glass-nav transition-all duration-500">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 h-24 flex items-center justify-between transition-all duration-500" id="nav-container">
+      <div class="flex items-center space-x-4 cursor-pointer gsap-nav-item">
+        <div class="w-12 h-12 flex items-center justify-center transition-all opacity-90" id="nav-logo-box">
+          <img src="./assets/images/logo.png" alt="Logo" class="w-full h-full object-contain filter invert opacity-80 mix-blend-screen">
         </div>
         <div>
-          <span id="nav-biz-name" class="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-white block leading-none">Azure Horizon</span>
-          <span id="nav-city" class="text-xs uppercase tracking-widest text-brand-goldLight font-semibold">Miami & The Bahamas</span>
+          <span id="nav-biz-name" class="font-sans text-xl font-light tracking-[0.1em] text-white block leading-none">Azure Horizon</span>
+          <span id="nav-city" class="text-[9px] uppercase tracking-[0.3em] text-brand-muted font-medium mt-1.5 block">Miami & The Bahamas</span>
         </div>
       </div>
 
-      <nav class="hidden md:flex items-center space-x-10 text-sm font-semibold text-slate-300 uppercase tracking-widest">
-        <a href="#fleet" class="hover:text-brand-gold transition-colors gsap-nav-item">The Fleet</a>
-        <a href="#destinations" class="hover:text-brand-gold transition-colors gsap-nav-item">Destinations</a>
-        <a href="#why-upgrade" class="hover:text-brand-gold transition-colors gsap-nav-item">VIP Concierge</a>
+      <nav class="hidden md:flex items-center space-x-12 text-xs font-semibold text-brand-muted uppercase tracking-[0.25em]">
+        <a href="#fleet" class="hover:text-brand-sand transition-colors duration-300 gsap-nav-item">The Fleet</a>
+        <a href="#destinations" class="hover:text-brand-sand transition-colors duration-300 gsap-nav-item">Destinations</a>
+        <a href="#why-upgrade" class="hover:text-brand-sand transition-colors duration-300 gsap-nav-item">Concierge</a>
       </nav>
 
-      <div class="flex items-center space-x-6 gsap-nav-item">
-        <a id="nav-phone" href="tel:+1(305)555-0198" class="hidden sm:flex items-center space-x-2 text-sm font-semibold text-slate-300 hover:text-white transition-colors group">
-          <i class="fa-solid fa-phone text-brand-goldLight group-hover:rotate-12 transition-transform"></i>
+      <div class="flex items-center space-x-8 gsap-nav-item">
+        <a id="nav-phone" href="tel:+1(305)555-0198" class="hidden sm:flex items-center space-x-3 text-xs font-medium text-brand-muted hover:text-white transition-colors group tracking-widest">
           <span id="nav-phone-text">+1 (305) 555-0198</span>
         </a>
-        <a id="nav-cta" href="#" target="_blank" class="bg-gradient-to-r from-brand-gold to-yellow-600 hover:from-yellow-500 hover:to-brand-gold text-navy-950 font-bold text-sm px-7 py-3.5 rounded-none border border-brand-gold/50 shadow-lg shadow-brand-gold/25 transition-all transform hover:-translate-y-1 hover:shadow-brand-gold/40 relative overflow-hidden group">
-          <span class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
-          <span class="relative">Inquire Now</span>
+        <a id="nav-cta" href="#" target="_blank" class="border border-brand-sand/50 text-brand-sand hover:bg-brand-sand hover:text-brand-charcoal font-medium text-[11px] uppercase tracking-[0.2em] px-8 py-3.5 transition-all duration-300">
+          Inquire
         </a>
       </div>
     </div>
@@ -134,78 +124,77 @@
 
   <!-- HERO SECTION -->
   <section class="relative min-h-screen flex items-center justify-center pt-20 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-    <!-- Hero Background Image & Overlay (Parallax) -->
+    <!-- Main Hero Parallax Background -->
     <div class="absolute inset-0 z-0">
-      <img id="hero-bg" src="./assets/images/hero_bg.png" alt="Yacht Background" class="parallax-bg w-full h-[120%] object-cover object-center filter brightness-[0.4] absolute top-[-10%]">
-      <div class="absolute inset-0 bg-gradient-to-b from-navy-950/80 via-transparent to-navy-950/90"></div>
+      <img id="hero-bg" src="./assets/images/hero_bg.png" alt="Yacht Background" class="parallax-bg w-full h-[125%] object-cover object-center filter grayscale-[30%] brightness-[0.3] absolute top-[-15%]">
+      <div class="absolute inset-0 bg-gradient-to-b from-brand-charcoal/80 via-transparent to-brand-charcoal"></div>
     </div>
 
-    <div class="relative z-10 max-w-5xl mx-auto text-center mt-12">
-      <div class="gsap-hero-elem inline-flex items-center space-x-3 bg-brand-gold/10 border border-brand-gold/30 backdrop-blur-md px-6 py-2 rounded-full text-brand-goldLight text-xs sm:text-sm font-semibold mb-8 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
-        <i class="fa-solid fa-crown text-brand-gold"></i>
-        <span id="hero-badge" class="tracking-widest uppercase">A Premier Maritime Experience</span>
+    <!-- Scroll-Driven Floating Parallax Images (Minimalist Additions) -->
+    <div class="absolute top-1/4 left-8 xl:left-24 w-48 h-64 md:w-56 md:h-80 z-10 hidden lg:block overflow-hidden shadow-2xl opacity-0 gsap-hero-elem" data-speed="-1.5">
+      <img src="./assets/images/yacht_champagne.png" alt="Champagne Detail" class="w-full h-full object-cover filter brightness-75">
+      <div class="absolute inset-0 border border-white/10 pointer-events-none"></div>
+    </div>
+    <div class="absolute bottom-1/4 right-8 xl:right-24 w-48 h-64 md:w-56 md:h-80 z-10 hidden lg:block overflow-hidden shadow-2xl opacity-0 gsap-hero-elem" data-speed="1.2">
+      <img src="./assets/images/yacht_detail.png" alt="Yacht Detail" class="w-full h-full object-cover filter brightness-75">
+      <div class="absolute inset-0 border border-white/10 pointer-events-none"></div>
+    </div>
+
+    <div class="relative z-20 max-w-4xl mx-auto text-center mt-12 mix-blend-lighten">
+      <div class="gsap-hero-elem inline-flex items-center space-x-3 mb-10 opacity-80">
+        <span class="w-8 h-[1px] bg-brand-sand"></span>
+        <span id="hero-badge" class="text-brand-sand text-[10px] tracking-[0.3em] uppercase font-medium">An Elevated Maritime Experience</span>
+        <span class="w-8 h-[1px] bg-brand-sand"></span>
       </div>
 
-      <h1 id="hero-headline" class="gsap-hero-elem font-serif text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight text-white mb-8 leading-[1.05] drop-shadow-2xl">
-        Bespoke Luxury Yacht Charters
+      <h1 id="hero-headline" class="gsap-hero-elem font-serif text-5xl sm:text-6xl md:text-7xl font-normal text-white mb-8 leading-[1.15] tracking-tight">
+        Bespoke Luxury <br>Yacht Charters
       </h1>
 
-      <p id="hero-subheadline" class="gsap-hero-elem text-xl sm:text-2xl text-slate-300 max-w-3xl mx-auto mb-12 font-light leading-relaxed">
+      <p id="hero-subheadline" class="gsap-hero-elem text-lg sm:text-xl text-slate-300/80 max-w-2xl mx-auto mb-14 font-light leading-relaxed tracking-wide">
         Experience unparalleled maritime elegance with fully crewed private superyachts and custom island itineraries.
       </p>
 
       <div class="gsap-hero-elem flex flex-col sm:flex-row items-center justify-center gap-6">
-        <a id="hero-cta-main" href="#" target="_blank" class="w-full sm:w-auto bg-gradient-to-r from-brand-gold to-yellow-600 hover:from-yellow-500 hover:to-brand-gold text-navy-950 font-bold text-lg px-10 py-5 rounded-none shadow-[0_0_30px_rgba(212,175,55,0.3)] transition-all transform hover:-translate-y-1 text-center relative overflow-hidden group">
-          <span class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
-          <span class="relative">Reserve Your Charter</span>
-        </a>
-        <a href="#fleet" class="w-full sm:w-auto bg-transparent border-b-2 border-brand-gold/50 hover:border-brand-gold text-white font-semibold text-lg px-8 py-4 transition-all text-center tracking-widest uppercase text-sm group">
-          Explore The Fleet <i class="fa-solid fa-arrow-down ml-2 text-brand-gold group-hover:translate-y-1 transition-transform"></i>
+        <a id="hero-cta-main" href="#" target="_blank" class="w-full sm:w-auto bg-brand-sand text-brand-charcoal hover:bg-brand-sandLight font-medium text-xs uppercase tracking-[0.2em] px-10 py-5 transition-all duration-300">
+          Reserve Your Charter
         </a>
       </div>
     </div>
     
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 gsap-hero-elem flex flex-col items-center opacity-70">
-      <span class="text-[10px] uppercase tracking-[0.3em] text-brand-goldLight mb-3">Scroll</span>
-      <div class="w-[1px] h-12 bg-gradient-to-b from-brand-gold to-transparent"></div>
+    <!-- Minimalist Scroll indicator -->
+    <div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 gsap-hero-elem flex flex-col items-center opacity-60">
+      <span class="text-[9px] uppercase tracking-[0.4em] text-white/70 mb-4 font-medium">Scroll</span>
+      <div class="w-[1px] h-16 bg-white/20 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-brand-sand transform -translate-y-full animate-[scrollIndicator_2s_ease-in-out_infinite]"></div>
+      </div>
     </div>
   </section>
 
-  <!-- FLEET SECTION (3D CARDS) -->
-  <section id="fleet" class="py-32 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto relative">
-    <!-- Decorative background elements -->
-    <div class="absolute top-40 left-0 w-96 h-96 bg-brand-gold/5 rounded-full filter blur-[100px] -z-10"></div>
+  <!-- FLEET SECTION (3D MINIMAL CARDS) -->
+  <section id="fleet" class="py-32 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto relative z-10 bg-brand-charcoal">
     
-    <div class="text-center max-w-4xl mx-auto mb-24 gsap-fade-up">
-      <span class="text-brand-goldLight text-sm font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-4">
-        <span class="w-12 h-[1px] bg-brand-goldLight/50"></span>
-        Our Collection
-        <span class="w-12 h-[1px] bg-brand-goldLight/50"></span>
-      </span>
-      <h2 class="font-serif text-5xl sm:text-7xl font-bold text-white mt-6 mb-6">The Private Fleet</h2>
-      <p class="text-slate-400 text-lg sm:text-xl font-light">Every vessel comes fully equipped with a certified Coast Guard captain, stewardess, and top-tier amenities.</p>
+    <div class="text-center max-w-4xl mx-auto mb-28 gsap-fade-up">
+      <h2 class="font-serif text-4xl sm:text-5xl font-normal text-white mt-6 mb-6 tracking-tight">The Private Fleet</h2>
+      <p class="text-brand-muted text-base sm:text-lg font-light tracking-wide max-w-xl mx-auto">Every vessel comes fully equipped with a certified Coast Guard captain, stewardess, and top-tier amenities.</p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16" id="fleet-container">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16" id="fleet-container">
       <!-- Dynamic Fleet Cards injected here -->
     </div>
   </section>
 
   <!-- DESTINATIONS SECTION -->
-  <section id="destinations" class="py-32 px-4 sm:px-6 lg:px-8 bg-navy-900/40 border-y border-white/5 relative overflow-hidden">
-    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-brand-gold/5 rounded-full filter blur-[120px] -z-10"></div>
+  <section id="destinations" class="py-32 px-4 sm:px-6 lg:px-8 bg-brand-ash border-y border-white/5 relative overflow-hidden">
     
-    <div class="max-w-[1400px] mx-auto">
-      <div class="flex flex-col lg:flex-row justify-between items-end mb-20 gap-8 gsap-fade-up">
-        <div class="max-w-2xl">
-          <span class="text-brand-goldLight text-sm font-bold uppercase tracking-[0.2em]">Tailored Itineraries</span>
-          <h2 class="font-serif text-4xl sm:text-6xl font-bold text-white mt-4">Curated Destinations</h2>
-        </div>
-        <p class="text-slate-400 text-lg sm:text-xl font-light max-w-lg lg:text-right">Exclusive routes tailored for ultimate privacy and luxury, navigating the world's most pristine waters.</p>
+    <div class="max-w-[1200px] mx-auto">
+      <div class="text-center mb-20 gsap-fade-up">
+        <span class="text-brand-sand text-[10px] font-bold uppercase tracking-[0.3em]">Tailored Itineraries</span>
+        <h2 class="font-serif text-4xl sm:text-5xl font-normal text-white mt-6 mb-4 tracking-tight">Curated Destinations</h2>
+        <p class="text-brand-muted text-base font-light mx-auto max-w-lg">Exclusive routes tailored for ultimate privacy and luxury, navigating the world's most pristine waters.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="destinations-container">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="destinations-container">
         <!-- Dynamic Destinations injected here -->
       </div>
     </div>
@@ -213,71 +202,69 @@
 
   <!-- CERTIFICATIONS SECTION -->
   <section class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
-      <h3 class="font-serif text-3xl text-white mb-10 gsap-fade-up">Our Elite Commitments</h3>
-      <div class="flex flex-wrap justify-center gap-8" id="certifications-container">
+      <div class="flex flex-wrap justify-center gap-6" id="certifications-container">
           <!-- Certifications injected here -->
       </div>
   </section>
 
   <!-- VALUE-FIRST: WHY THIS UPGRADE MATTERS (OUTREACH CONVERSION SECTION) -->
-  <section id="why-upgrade" class="py-32 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-    <div class="glass-card rounded-none p-10 sm:p-16 border-2 border-brand-gold/30 relative overflow-hidden gsap-fade-up" data-tilt data-tilt-max="2" data-tilt-speed="1000" data-tilt-perspective="1500" data-tilt-glare="true" data-tilt-max-glare="0.1">
-      <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-brand-gold/15 rounded-full filter blur-[80px] pointer-events-none"></div>
+  <section id="why-upgrade" class="py-32 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+    <div class="glass-card p-12 sm:p-20 relative overflow-hidden gsap-fade-up" data-tilt data-tilt-max="2" data-tilt-speed="1000" data-tilt-perspective="2000" data-tilt-glare="true" data-tilt-max-glare="0.05">
 
-      <div class="glass-card-content max-w-3xl relative z-10">
-        <div class="inline-flex items-center space-x-3 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs uppercase tracking-widest font-semibold px-4 py-2 mb-8 shadow-inner shadow-emerald-500/10">
-          <i class="fa-solid fa-circle-check"></i>
-          <span>CRO & Speed Audit Completed</span>
+      <div class="glass-card-content max-w-3xl relative z-10 text-center mx-auto">
+        <div class="inline-flex items-center space-x-3 text-white/50 text-[10px] uppercase tracking-[0.3em] font-medium px-4 py-2 mb-10 border border-white/10">
+          <span>CRO & Performance Audit Completed</span>
         </div>
 
-        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-6 leading-tight">
-          Why We Built This Prototype For <br><span id="audit-biz-name" class="gold-gradient-text">Azure Horizon Yacht Charters</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-normal text-white mb-8 leading-tight">
+          Why We Built This Prototype For <br><span id="audit-biz-name" class="text-brand-sand italic">Azure Horizon Yacht Charters</span>
         </h2>
-        <p class="text-slate-300 text-lg mb-10 font-light">
-          We analyzed your current web presence and noticed key conversion barriers that are likely costing you high-ticket bookings. Here is what this modernized setup fixes:
+        <p class="text-brand-muted text-base mb-12 font-light max-w-2xl mx-auto leading-relaxed">
+          We analyzed your current web presence and noticed key conversion barriers that are likely costing you high-ticket bookings. This modernized aesthetic fixes:
         </p>
 
-        <ul class="space-y-6 mb-12">
-          <li class="flex items-start text-base text-slate-200">
-            <div class="w-8 h-8 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center mr-4 mt-0.5 shrink-0 border border-brand-gold/30">
-              <i class="fa-solid fa-check text-sm"></i>
-            </div>
-            <span class="pt-1">Ultra-clean dark luxury aesthetic tailored specifically for high-ticket maritime charters.</span>
+        <ul class="space-y-5 mb-14 text-left max-w-xl mx-auto">
+          <li class="flex items-start text-sm text-slate-300 font-light tracking-wide">
+            <span class="text-brand-sand mr-4 tracking-widest text-[10px] pt-1">01 &mdash;</span>
+            <span>Ultra-clean, minimalist luxury aesthetic tailored specifically for high-ticket maritime charters.</span>
           </li>
-          <li class="flex items-start text-base text-slate-200">
-            <div class="w-8 h-8 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center mr-4 mt-0.5 shrink-0 border border-brand-gold/30">
-              <i class="fa-solid fa-check text-sm"></i>
-            </div>
-            <span class="pt-1">Fully integrated 3D scrolling animations to give the site a premium, "Apple-level" feel.</span>
+          <li class="flex items-start text-sm text-slate-300 font-light tracking-wide">
+            <span class="text-brand-sand mr-4 tracking-widest text-[10px] pt-1">02 &mdash;</span>
+            <span>Fully integrated 3D scrolling animations to deliver a premium, editorial browsing experience.</span>
           </li>
-          <li class="flex items-start text-base text-slate-200">
-            <div class="w-8 h-8 rounded-full bg-brand-gold/20 text-brand-gold flex items-center justify-center mr-4 mt-0.5 shrink-0 border border-brand-gold/30">
-              <i class="fa-solid fa-check text-sm"></i>
-            </div>
-            <span class="pt-1">Frictionless VIP concierge inquiry button optimized for seamless mobile conversions.</span>
+          <li class="flex items-start text-sm text-slate-300 font-light tracking-wide">
+            <span class="text-brand-sand mr-4 tracking-widest text-[10px] pt-1">03 &mdash;</span>
+            <span>Frictionless VIP concierge inquiry optimized for seamless mobile conversions.</span>
           </li>
         </ul>
 
-        <div class="flex flex-col sm:flex-row items-center gap-6 pt-8 border-t border-white/10">
-          <a id="audit-cta" href="#" target="_blank" class="w-full sm:w-auto bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-bold text-base uppercase tracking-wider px-10 py-5 shadow-[0_0_30px_rgba(16,185,129,0.2)] transition-all text-center">
-            Claim This Website <i class="fa-solid fa-arrow-right ml-2"></i>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-6 pt-10 border-t border-white/5">
+          <a id="audit-cta" href="#" target="_blank" class="w-full sm:w-auto bg-white text-brand-charcoal hover:bg-brand-sand font-medium text-xs uppercase tracking-[0.2em] px-10 py-5 transition-colors duration-300 text-center">
+            Claim This Website
           </a>
-          <span class="text-sm text-slate-400 text-center sm:text-left font-light"><i class="fa-solid fa-stopwatch mr-2 text-brand-goldLight"></i>10-minute setup call • Zero downtime</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-navy-950 border-t border-white/5 py-16 px-4 text-center text-slate-500 text-sm">
+  <footer class="bg-brand-charcoal border-t border-white/5 py-16 px-4 text-center text-brand-muted text-xs">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="text-left">
-        <p class="text-brand-gold font-serif font-bold text-2xl mb-1" id="footer-biz-name">Azure Horizon Yacht Charters</p>
-        <p id="footer-location" class="text-sm text-slate-400 uppercase tracking-widest">Miami & The Bahamas • VIP Yachting Services</p>
+        <p class="text-white font-sans font-light tracking-[0.15em] text-lg mb-2 uppercase" id="footer-biz-name">Azure Horizon Yacht Charters</p>
+        <p id="footer-location" class="text-[9px] text-brand-muted/70 uppercase tracking-[0.3em]">Miami & The Bahamas • VIP Yachting Services</p>
       </div>
-      <p class="font-light tracking-wide">© <span id="year"></span> All rights reserved. <br>Preview created for concept evaluation.</p>
+      <p class="font-light tracking-widest uppercase text-[9px]">© <span id="year"></span> All rights reserved. <br>Preview created for concept evaluation.</p>
     </div>
   </footer>
+
+  <style>
+    @keyframes scrollIndicator {
+      0% { transform: translateY(-100%); }
+      50% { transform: translateY(100%); }
+      100% { transform: translateY(100%); }
+    }
+  </style>
 
   <!-- DYNAMIC DATA & GSAP ANIMATIONS SCRIPT -->
   <script>
@@ -290,20 +277,20 @@
       "baseLocation": "Miami & The Bahamas",
       "phone": "+1 (305) 555-0198",
       "email": "charters@azurehorizonyachts.com",
-      "primaryColor": "#D4AF37",
+      "primaryColor": "#BBA992",
       "heroTitle": "Bespoke Luxury Yacht Charters",
       "heroSubtitle": "Experience unparalleled maritime elegance with fully crewed private superyachts and custom island itineraries.",
       "fleet": [
         {
-          "name": "The Aurelia (92ft Sunseeker)",
-          "specs": "12 Guests • 4 Cabins • 4 Crew • 28 Knots",
+          "name": "The Aurelia (92ft)",
+          "specs": "12 Guests • 4 Cabins • 4 Crew",
           "dayRate": "$9,500 / day",
           "amenities": ["Flybridge Jacuzzi", "SeaBob & Jet Skis", "Private Chef"],
           "image": "./assets/images/yacht_interior.png"
         },
         {
-          "name": "Oceanic Serenity (115ft Majesty)",
-          "specs": "14 Guests • 5 Cabins • 5 Crew • 22 Knots",
+          "name": "Oceanic Serenity (115ft)",
+          "specs": "14 Guests • 5 Cabins • 5 Crew",
           "dayRate": "$14,000 / day",
           "amenities": ["Beach Club Platform", "Full Scuba Gear", "Master Suite Balcony"],
           "image": "./assets/images/hero_bg.png"
@@ -312,9 +299,9 @@
       "destinations": [
         "Exumas & Nassau Cays",
         "Bimini Weekend Getaway",
-        "Miami Coastal Sunset Cruise"
+        "Miami Coastal Sunset"
       ],
-      "certifications": ["MYBA Certified", "Licensed Master Captains", "Full Commercial Marine Insurance"],
+      "certifications": ["MYBA Certified", "Licensed Master Captains"],
       "bookingCtaUrl": "https://cal.com/your-agency/yacht-consult"
     };
 
@@ -333,7 +320,7 @@
 
     function renderSite(data) {
       // Titles & Names
-      document.title = `${data.companyName} - Private Luxury Yacht Charters`;
+      document.title = `${data.companyName} - Minimalist Luxury Charters`;
       document.getElementById('banner-biz-name').textContent = data.companyName;
       document.getElementById('nav-biz-name').textContent = data.companyName;
       document.getElementById('nav-city').textContent = data.baseLocation;
@@ -354,65 +341,55 @@
       });
 
       // Hero
-      if (data.heroTitle) document.getElementById('hero-headline').textContent = data.heroTitle;
+      if (data.heroTitle) document.getElementById('hero-headline').innerHTML = data.heroTitle.replace('Luxury', 'Luxury <br>');
       if (data.heroSubtitle) document.getElementById('hero-subheadline').textContent = data.heroSubtitle;
 
-      // Fleet (Injecting vanilla-tilt attributes directly)
+      // Fleet
       const fleetContainer = document.getElementById('fleet-container');
       fleetContainer.innerHTML = (data.fleet || []).map((item, index) => `
-        <div class="glass-card overflow-hidden group flex flex-col gsap-fleet-card" data-tilt data-tilt-max="3" data-tilt-speed="400" data-tilt-perspective="1000" data-tilt-scale="1.02" data-tilt-glare="true" data-tilt-max-glare="0.2">
-          <div class="relative h-80 overflow-hidden">
-            <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover transform transition-transform duration-[2000ms] ease-out group-hover:scale-110">
-            <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-80"></div>
-            <div class="absolute top-6 right-6 bg-navy-950/80 backdrop-blur-md text-brand-gold font-bold text-sm px-5 py-2.5 border border-brand-gold/40 shadow-2xl glass-card-content">
+        <div class="group flex flex-col gsap-fleet-card" data-tilt data-tilt-max="1" data-tilt-speed="800" data-tilt-perspective="2000">
+          <div class="relative h-[400px] overflow-hidden mb-8">
+            <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover filter grayscale-[15%] transform transition-transform duration-[2000ms] ease-out group-hover:scale-105">
+            <div class="absolute inset-0 bg-brand-charcoal/10 group-hover:bg-transparent transition-colors duration-700"></div>
+            <div class="absolute bottom-6 left-6 bg-brand-charcoal text-white font-sans font-light text-[10px] uppercase tracking-[0.2em] px-4 py-2 border border-white/10">
               ${item.dayRate}
             </div>
           </div>
-          <div class="p-10 flex-1 flex flex-col justify-between glass-card-content bg-navy-950/40">
+          <div class="flex-1 flex flex-col justify-between px-2">
             <div>
-              <div class="flex items-center justify-between text-xs text-brand-goldLight mb-4 font-bold uppercase tracking-[0.15em]">
-                <span><i class="fa-solid fa-ship mr-2"></i> ${item.specs}</span>
+              <div class="flex items-center justify-between text-[9px] text-brand-sand mb-4 font-semibold uppercase tracking-[0.25em]">
+                <span>${item.specs}</span>
               </div>
-              <h3 class="font-serif text-3xl font-bold text-white mb-6 group-hover:text-brand-goldLight transition-colors">${item.name}</h3>
-              <ul class="space-y-4 mb-10">
+              <h3 class="font-serif text-3xl font-normal text-white mb-6 group-hover:text-brand-sand transition-colors duration-500">${item.name}</h3>
+              <div class="flex flex-wrap gap-2 mb-8">
                 ${(item.amenities || []).map(f => `
-                  <li class="text-sm text-slate-300 flex items-center font-light">
-                    <i class="fa-solid fa-plus text-brand-gold text-[10px] mr-4"></i> ${f}
-                  </li>
+                  <span class="text-[10px] text-brand-muted border border-white/10 px-3 py-1 font-light tracking-widest uppercase">${f}</span>
                 `).join('')}
-              </ul>
+              </div>
             </div>
-            <a href="${data.bookingCtaUrl}" target="_blank" class="w-full block text-center bg-transparent hover:bg-brand-gold hover:text-navy-950 text-brand-gold text-sm font-bold uppercase tracking-wider py-5 transition-all border border-brand-gold/40 relative overflow-hidden">
-              <span class="relative z-10">Inquire About Vessel</span>
-            </a>
           </div>
         </div>
       `).join('');
 
       // Destinations
       const destContainer = document.getElementById('destinations-container');
-      destContainer.innerHTML = (data.destinations || []).map(dest => `
-        <div class="glass-card p-10 border-t border-brand-gold/30 relative group hover:bg-brand-gold/5 transition-all text-center gsap-dest-card">
-          <div class="w-12 h-12 mx-auto bg-brand-gold/10 rounded-full flex items-center justify-center mb-6 text-brand-gold group-hover:scale-110 transition-transform">
-             <i class="fa-solid fa-map-location-dot"></i>
-          </div>
-          <h3 class="font-serif text-2xl font-bold text-white mb-6 group-hover:text-brand-goldLight transition-colors">${dest}</h3>
-          <a href="${data.bookingCtaUrl}" target="_blank" class="text-xs font-bold text-brand-gold uppercase tracking-widest hover:text-white transition-colors">
-            View Itinerary <i class="fa-solid fa-arrow-right ml-2 text-[10px]"></i>
-          </a>
+      destContainer.innerHTML = (data.destinations || []).map((dest, i) => `
+        <div class="p-10 border border-white/5 relative group hover:border-brand-sand/30 transition-all text-center gsap-dest-card bg-brand-charcoal">
+          <span class="text-[9px] text-brand-muted block mb-4 tracking-[0.3em] font-medium">0${i+1} &mdash;</span>
+          <h3 class="font-serif text-2xl font-normal text-white mb-6 group-hover:text-brand-sand transition-colors duration-500">${dest}</h3>
         </div>
       `).join('');
 
       // Certifications
       const certContainer = document.getElementById('certifications-container');
       certContainer.innerHTML = (data.certifications || []).map(cert => `
-          <div class="bg-transparent border border-white/20 text-slate-300 px-6 py-3 text-sm tracking-widest uppercase font-semibold gsap-cert-badge hover:border-brand-gold transition-colors">
-              <i class="fa-solid fa-shield-halved text-brand-gold mr-3"></i> ${cert}
+          <div class="text-brand-muted/70 text-[10px] tracking-[0.2em] uppercase font-medium gsap-cert-badge px-6 border-r border-white/10 last:border-0">
+              ${cert}
           </div>
       `).join('');
 
       // Init Animations after DOM is fully populated
-      initAnimations();
+      setTimeout(initAnimations, 100);
     }
 
     function initAnimations() {
@@ -425,23 +402,38 @@
       // Hero Initial Load Animation
       const tl = gsap.timeline();
       tl.from(".gsap-nav-item", {
-        y: -20,
+        y: -10,
         opacity: 0,
-        duration: 0.8,
+        duration: 1.2,
         stagger: 0.1,
-        ease: "power3.out"
+        ease: "power2.out"
       })
       .from(".gsap-hero-elem", {
-        y: 40,
+        y: 30,
         opacity: 0,
-        duration: 1,
-        stagger: 0.15,
-        ease: "power4.out"
-      }, "-=0.5");
+        duration: 1.5,
+        stagger: 0.2,
+        ease: "power3.out"
+      }, "-=0.8");
 
-      // Hero Parallax Scroll
+      // Scroll-Driven Parallax for Custom Data-Speed Elements (Like the new Hero Images)
+      gsap.utils.toArray('[data-speed]').forEach(elem => {
+        let speed = parseFloat(elem.getAttribute('data-speed'));
+        gsap.to(elem, {
+          y: speed * 150, // Move y by 150px * speed ratio
+          ease: "none",
+          scrollTrigger: {
+            trigger: elem.parentElement, // Use hero section as trigger
+            start: "top top",
+            end: "bottom top",
+            scrub: true
+          }
+        });
+      });
+
+      // Hero Background Parallax Scroll
       gsap.to(".parallax-bg", {
-        yPercent: 30,
+        yPercent: 20,
         ease: "none",
         scrollTrigger: {
           trigger: "body",
@@ -459,16 +451,16 @@
         
         if (window.scrollY > 50) {
           nav.classList.add('scrolled');
-          nav.classList.replace('top-[40px]', 'top-0');
+          nav.classList.replace('top-[44px]', 'top-0');
           navContainer.classList.replace('h-24', 'h-20');
-          logoBox.classList.replace('w-14', 'w-10');
-          logoBox.classList.replace('h-14', 'h-10');
+          logoBox.classList.replace('w-12', 'w-9');
+          logoBox.classList.replace('h-12', 'h-9');
         } else {
           nav.classList.remove('scrolled');
-          nav.classList.replace('top-0', 'top-[40px]');
+          nav.classList.replace('top-0', 'top-[44px]');
           navContainer.classList.replace('h-20', 'h-24');
-          logoBox.classList.replace('w-10', 'w-14');
-          logoBox.classList.replace('h-10', 'h-14');
+          logoBox.classList.replace('w-9', 'w-12');
+          logoBox.classList.replace('h-9', 'h-12');
         }
       });
 
@@ -477,12 +469,12 @@
         gsap.from(elem, {
           scrollTrigger: {
             trigger: elem,
-            start: "top 85%",
+            start: "top 80%",
           },
-          y: 50,
+          y: 40,
           opacity: 0,
-          duration: 1,
-          ease: "power3.out"
+          duration: 1.2,
+          ease: "power2.out"
         });
       });
 
@@ -490,13 +482,13 @@
       gsap.from(".gsap-fleet-card", {
         scrollTrigger: {
           trigger: "#fleet-container",
-          start: "top 80%",
+          start: "top 75%",
         },
-        y: 80,
+        y: 60,
         opacity: 0,
-        duration: 1.2,
+        duration: 1.5,
         stagger: 0.2,
-        ease: "expo.out"
+        ease: "power3.out"
       });
 
       // Destinations Stagger Reveal
@@ -505,12 +497,11 @@
           trigger: "#destinations-container",
           start: "top 85%",
         },
-        y: 40,
+        y: 30,
         opacity: 0,
-        scale: 0.95,
-        duration: 1,
+        duration: 1.2,
         stagger: 0.15,
-        ease: "back.out(1.2)"
+        ease: "power2.out"
       });
 
       // Certifications Reveal
@@ -519,9 +510,8 @@
           trigger: "#certifications-container",
           start: "top 90%",
         },
-        y: 20,
         opacity: 0,
-        duration: 0.6,
+        duration: 1,
         stagger: 0.1,
         ease: "power2.out"
       });
