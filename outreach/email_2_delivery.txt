@@ -3,7 +3,7 @@ Subject: Re: quick observation regarding {{Company_Name}}'s fleet page
 Hi {{First_Name}},
 
 Here is the live interactive prototype I built for {{Company_Name}}:
-👉 https://elevateweb.me/previews/{{client_slug}}/
+👉 https://elevateweb.me/client-previews/previews/{{client_slug}}/
 
 A few key improvements made:
 1. Ultra-clean dark luxury aesthetic tailored for high-ticket charter bookings.

@@ -129,7 +129,7 @@ def generate_preview(business_name, city, overview_text, api_key=None):
     
     print(f"[SUCCESS] Preview generated successfully!")
     print(f"[PATH] Local Path: {target_dir}")
-    print(f"[URL] GitHub Pages URL: https://<username>.github.io/client-previews/previews/{slug}/")
+    print(f"[URL] GitHub Pages URL: https://elevateweb.me/client-previews/previews/{slug}/")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate client preview site")
