@@ -1,0 +1,18 @@
+Subject: Re: quick observation regarding {{Company_Name}}'s fleet page
+
+Hi {{First_Name}},
+
+Here is the live interactive prototype I built for {{Company_Name}}:
+👉 https://elevateweb.me/previews/{{client_slug}}/
+
+A few key improvements made:
+1. Ultra-clean dark luxury aesthetic tailored for high-ticket charter bookings.
+2. Fast vessel spec badges (length, guest capacity, day rates, water toys).
+3. Frictionless VIP concierge inquiry button optimized for mobile.
+
+If you like the direction and would like to make this your official site (or customize any fleet details), feel free to book a 10-minute walkthrough on my calendar here: https://cal.com/[your-calendar]/10min
+
+Hope you enjoy the preview!
+
+Best,
+[Your Name]

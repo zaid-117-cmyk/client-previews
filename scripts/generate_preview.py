@@ -6,60 +6,42 @@ import shutil
 import argparse
 import urllib.request
 
-# Default Gemini Prompt for Yacht / Boat Charter Niche
+# New Gemini Prompt based on the Knowledgebase for Yacht Charters
 SYSTEM_PROMPT = """
-You are a master conversion-rate-optimization (CRO) specialist and high-ticket copywriter for luxury hospitality and yacht charter businesses.
-Analyze the provided business details and generate a JSON configuration for a modernized, high-converting website.
+You are a luxury branding specialist and full-stack designer for ultra-high-net-worth maritime businesses.
 
-Output strictly valid JSON matching this schema:
+Task:
+1. Identify 2 specific UX/conversion flaws on their current website (e.g., poor mobile fleet layout, slow loading images, lack of clear spec badges).
+2. Generate an ultra-luxurious `siteConfig.json` following the yacht template schema, with elegant copywriting, refined fleet descriptions, and verified Unsplash marine photography.
+3. Output strictly valid JSON matching the schema below.
+
+Required Schema:
 {
-  "businessName": "Name of business",
-  "tagline": "Punchy luxury tagline",
-  "city": "City, State",
-  "phone": "(XXX) XXX-XXXX",
+  "companyName": "Name of business",
+  "founderName": "Captain or Founder Name",
+  "baseLocation": "City or Region",
+  "phone": "Phone Number",
   "email": "contact email",
-  "ctaBookingUrl": "https://cal.com/your-agency/10min",
-  "hero": {
-    "headline": "High impact luxury headline",
-    "subheadline": "Compelling subheadline focusing on VIP experience and charter options.",
-    "bgImage": "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?q=80&w=1920&auto=format&fit=crop",
-    "badge": "★ #1 Rated Luxury Charter Service in [City]"
-  },
-  "stats": [
-    {"label": "5-Star Reviews", "value": "200+"},
-    {"label": "Private Fleet", "value": "6+ Vessels"},
-    {"label": "Charter Hours", "value": "8,000+"},
-    {"label": "Captain Experience", "value": "12+ Yrs"}
-  ],
+  "primaryColor": "#D4AF37",
+  "heroTitle": "High impact luxury headline",
+  "heroSubtitle": "Compelling subheadline focusing on VIP experience.",
   "fleet": [
     {
       "name": "Vessel Name & Specs",
-      "capacity": "XX Guests",
-      "speed": "XX Knots",
-      "price": "$XXX / hr",
-      "image": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=800&auto=format&fit=crop",
-      "features": ["Feature 1", "Feature 2", "Feature 3", "Feature 4"]
+      "specs": "Guests • Cabins • Crew • Knots",
+      "dayRate": "$XXX / day",
+      "amenities": ["Feature 1", "Feature 2", "Feature 3"],
+      "image": "https://images.unsplash.com/photo-XXX?auto=format&fit=crop&w=1200&q=80"
     }
   ],
-  "experiences": [
-    {
-      "title": "Experience Title",
-      "duration": "Duration (e.g. 4 Hours)",
-      "description": "Short alluring description"
-    }
+  "destinations": [
+    "Destination 1",
+    "Destination 2",
+    "Destination 3"
   ],
-  "testimonials": [
-    {
-      "author": "Client Name",
-      "role": "Charter Type",
-      "review": "Enthusiastic review text"
-    }
-  ],
-  "flawsFixed": [
-    "Flaw 1 fix description",
-    "Flaw 2 fix description",
-    "Flaw 3 fix description"
-  ]
+  "certifications": ["MYBA Certified", "Licensed Master Captains"],
+  "bookingCtaUrl": "https://cal.com/your-agency/yacht-consult",
+  "flawsFixed": ["Flaw 1 fix description", "Flaw 2 fix description"]
 }
 """
 
@@ -72,9 +54,10 @@ def call_gemini_api(api_key, business_name, city, overview_text):
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key={api_key}"
     
     user_prompt = f"""
-    Business Name: {business_name}
-    City/Location: {city}
-    Current Website / Overview Text: {overview_text}
+    Target Prospect:
+    Company Name: {business_name}
+    Location: {city}
+    Current Website / Listing Info: {overview_text}
     
     Please generate the customized `siteConfig.json` object.
     Output ONLY valid JSON inside markdown block ```json ... ``` or as plain JSON.
@@ -126,8 +109,8 @@ def generate_preview(business_name, city, overview_text, api_key=None):
         print("Using base template config with populated parameters...")
         with open(os.path.join(base_dir, "siteConfig.json"), "r") as f:
             config_data = json.load(f)
-        config_data["businessName"] = business_name
-        config_data["city"] = city
+        config_data["companyName"] = business_name
+        config_data["baseLocation"] = city
     
     # Write siteConfig.json to client folder
     with open(os.path.join(target_dir, "siteConfig.json"), "w") as f:
@@ -135,6 +118,14 @@ def generate_preview(business_name, city, overview_text, api_key=None):
         
     # Copy index.html to client folder
     shutil.copy(os.path.join(base_dir, "index.html"), os.path.join(target_dir, "index.html"))
+    
+    # Copy assets if available
+    assets_dir = os.path.join(base_dir, "assets")
+    if os.path.exists(assets_dir):
+        target_assets = os.path.join(target_dir, "assets")
+        if os.path.exists(target_assets):
+            shutil.rmtree(target_assets)
+        shutil.copytree(assets_dir, target_assets)
     
     print(f"[SUCCESS] Preview generated successfully!")
     print(f"[PATH] Local Path: {target_dir}")

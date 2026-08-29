@@ -1,0 +1,16 @@
+Subject: quick observation regarding {{Company_Name}}'s fleet page
+
+Hi {{First_Name}},
+
+I came across {{Company_Name}} while researching private yacht charters in {{Location}}. 
+
+I noticed your current website lacks an interactive, mobile-optimized fleet showcase and instant charter inquiry flow—which often causes high-net-worth guests browsing on mobile to look elsewhere.
+
+I spent some time yesterday designing a modernized, luxury digital prototype for {{Company_Name}} that showcases your vessels, specs, and itineraries with an elevated aesthetic.
+
+Would you be open to taking a look at the live preview? Just drop a quick "yes" and I'll send the link over.
+
+Best regards,
+
+[Your Name]
+Digital Growth & Web Specialist | Luxury Maritime
