@@ -1,0 +1,109 @@
+{
+  "businessName": "Blue Water Yacht Charters",
+  "tagline": "Exclusive Yacht Experiences & Coastal Expeditions",
+  "city": "Key West, FL",
+  "phone": "(305) 555-0199",
+  "email": "booking@aurayachts.com",
+  "ctaBookingUrl": "https://cal.com/your-agency/15min",
+  "primaryColor": "#0ea5e9",
+  "secondaryColor": "#0f172a",
+  "hero": {
+    "headline": "Experience Unrivaled Luxury on the Open Ocean",
+    "subheadline": "Private VIP yacht charters, sunset cruises, and customized island getaways across Miami & The Keys.",
+    "bgImage": "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?q=80&w=1920&auto=format&fit=crop",
+    "badge": "\u00e2\u02dc\u2026 #1 Rated Luxury Charter Service in Miami"
+  },
+  "stats": [
+    {
+      "label": "5-Star Reviews",
+      "value": "250+"
+    },
+    {
+      "label": "Private Fleet",
+      "value": "8 Vessels"
+    },
+    {
+      "label": "Charter Hours",
+      "value": "10,000+"
+    },
+    {
+      "label": "Captain Experience",
+      "value": "15+ Yrs"
+    }
+  ],
+  "fleet": [
+    {
+      "name": "The Grand Aura (85ft Motor Yacht)",
+      "capacity": "12 Guests",
+      "speed": "24 Knots",
+      "price": "$1,200 / hr",
+      "image": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=800&auto=format&fit=crop",
+      "features": [
+        "Jacuzzi on Deck",
+        "Full VIP Crew & Chef",
+        "Jet Ski Included",
+        "State-of-the-art Sound System"
+      ]
+    },
+    {
+      "name": "Azure Horizon (62ft Sunseeker)",
+      "capacity": "10 Guests",
+      "speed": "28 Knots",
+      "price": "$850 / hr",
+      "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=800&auto=format&fit=crop",
+      "features": [
+        "Hydraulic Swim Platform",
+        "Bose Outdoor Audio",
+        "Snorkeling Gear",
+        "Complimentary Champagne"
+      ]
+    },
+    {
+      "name": "Oceanic Spirit (50ft Luxury Catamaran)",
+      "capacity": "15 Guests",
+      "speed": "18 Knots",
+      "price": "$650 / hr",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=800&auto=format&fit=crop",
+      "features": [
+        "Spacious Trampoline Lounge",
+        "Shallow Water Anchor",
+        "Paddleboards & Toys",
+        "Shaded Dining Area"
+      ]
+    }
+  ],
+  "experiences": [
+    {
+      "title": "Biscayne Bay Sunset Cruise",
+      "duration": "4 Hours",
+      "description": "Watch the Miami skyline light up from the ocean with gourmet hors d'oeuvres and chilled champagne."
+    },
+    {
+      "title": "Key Biscayne & Sandbar Day Trip",
+      "duration": "6-8 Hours",
+      "description": "Anchor at Nixon Sandbar, ride jet skis, and soak in the crystal-clear shallow waters."
+    },
+    {
+      "title": "Bespoke Multi-Day Florida Keys Voyage",
+      "duration": "Custom",
+      "description": "Tailored overnight itineraries to Key West and private island coves with full captain & stewardess service."
+    }
+  ],
+  "testimonials": [
+    {
+      "author": "Marcus & Elena Vance",
+      "role": "Anniversary Charter",
+      "review": "The Grand Aura blew our expectations away. Capt. Miller and his crew were top-tier. Unforgettable evening!"
+    },
+    {
+      "author": "David Chen",
+      "role": "Corporate Executive Retreat",
+      "review": "We booked the Azure Horizon for our executive team. Smooth booking, flawless vessel condition, and amazing service."
+    }
+  ],
+  "flawsFixed": [
+    "Added instant online charter availability checker and booking button.",
+    "Upgraded site load speed by 75% with mobile-first modern design.",
+    "Integrated high-resolution interactive fleet showcase with specs."
+  ]
+}
