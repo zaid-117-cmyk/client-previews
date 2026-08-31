@@ -18,30 +18,20 @@ Task:
 Required Schema:
 {
   "companyName": "Name of business",
-  "founderName": "Captain or Founder Name",
   "baseLocation": "City or Region",
-  "phone": "Phone Number",
-  "email": "contact email",
-  "primaryColor": "#BBA992",
-  "heroTitle": "High impact luxury headline",
-  "heroSubtitle": "Compelling subheadline focusing on VIP experience.",
-  "fleet": [
+  "heroTitle": "High impact luxury headline for section 1",
+  "heroSubtitle": "Compelling subheadline for section 1",
+  "services": [
     {
-      "name": "Vessel Name & Specs",
-      "specs": "Guests • Cabins • Crew • Knots",
-      "dayRate": "$XXX / day",
-      "amenities": ["Feature 1", "Feature 2", "Feature 3"],
-      "image": "https://images.unsplash.com/photo-XXX?auto=format&fit=crop&w=1200&q=80"
+      "title": "Service or Value Prop 1 for section 2",
+      "desc": "Description for section 2"
+    },
+    {
+      "title": "Service or Value Prop 2 for section 3",
+      "desc": "Description for section 3"
     }
   ],
-  "destinations": [
-    "Destination 1",
-    "Destination 2",
-    "Destination 3"
-  ],
-  "certifications": ["MYBA Certified", "Licensed Master Captains"],
-  "bookingCtaUrl": "https://cal.com/your-agency/yacht-consult",
-  "flawsFixed": ["Flaw 1 fix description", "Flaw 2 fix description"]
+  "bookingCtaUrl": "https://cal.com/your-agency/yacht-consult"
 }
 """
 
@@ -116,20 +106,17 @@ def generate_preview(business_name, city, overview_text, api_key=None):
     with open(os.path.join(target_dir, "siteConfig.json"), "w") as f:
         json.dump(config_data, f, indent=2)
         
-    # Copy index.html to client folder
-    shutil.copy(os.path.join(base_dir, "index.html"), os.path.join(target_dir, "index.html"))
-    
-    # Copy assets if available
-    assets_dir = os.path.join(base_dir, "assets")
-    if os.path.exists(assets_dir):
-        target_assets = os.path.join(target_dir, "assets")
-        if os.path.exists(target_assets):
-            shutil.rmtree(target_assets)
-        shutil.copytree(assets_dir, target_assets)
+    # Copy frontend assets to client folder
+    for file_name in ["index.html", "style.css", "main.js", "video_smooth.mp4"]:
+        src = os.path.join(base_dir, file_name)
+        if os.path.exists(src):
+            shutil.copy(src, os.path.join(target_dir, file_name))
     
     print(f"[SUCCESS] Preview generated successfully!")
     print(f"[PATH] Local Path: {target_dir}")
     print(f"[URL] GitHub Pages URL: https://elevateweb.me/client-previews/previews/{slug}/")
+    
+    return target_dir
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate client preview site")
@@ -137,6 +124,18 @@ if __name__ == "__main__":
     parser.add_argument("--city", default="Miami, FL", help="City, State")
     parser.add_argument("--overview", default="Outdated luxury charter site missing instant online booking.", help="Current website notes")
     parser.add_argument("--api-key", default=os.getenv("GEMINI_API_KEY"), help="Google AI Studio Gemini API Key")
+    parser.add_argument("--auto-commit", action="store_true", help="Automatically commit and push to git")
     
     args = parser.parse_args()
-    generate_preview(args.name, args.city, args.overview, args.api_key)
+    target_dir = generate_preview(args.name, args.city, args.overview, args.api_key)
+    
+    if args.auto_commit and target_dir:
+        print(f"Auto-committing {target_dir} to git...")
+        import subprocess
+        try:
+            subprocess.run(["git", "add", target_dir], check=True)
+            subprocess.run(["git", "commit", "-m", f"Add auto-generated preview for {args.name}"], check=True)
+            subprocess.run(["git", "push"], check=True)
+            print("Successfully pushed to GitHub!")
+        except Exception as e:
+            print(f"Error during git operations: {e}")

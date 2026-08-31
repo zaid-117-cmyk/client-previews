@@ -1,0 +1,45 @@
+{
+  "companyName": "Luxury Charters Test",
+  "founderName": "Captain Marcus Vance",
+  "baseLocation": "Miami",
+  "phone": "+1 (305) 555-0198",
+  "email": "charters@azurehorizonyachts.com",
+  "primaryColor": "#BBA992",
+  "heroTitle": "Bespoke Luxury Yacht Charters in Miami & The Bahamas",
+  "heroSubtitle": "Experience unparalleled maritime elegance with fully crewed private superyachts and custom island itineraries.",
+  "fleet": [
+    {
+      "name": "The Aurelia (92ft Sunseeker)",
+      "specs": "12 Guests \u00e2\u20ac\u00a2 4 Cabins \u00e2\u20ac\u00a2 4 Crew \u00e2\u20ac\u00a2 28 Knots",
+      "dayRate": "$9,500 / day",
+      "amenities": [
+        "Flybridge Jacuzzi",
+        "SeaBob & Jet Skis",
+        "Private Chef"
+      ],
+      "image": "./assets/images/yacht_interior.png"
+    },
+    {
+      "name": "Oceanic Serenity (115ft Majesty)",
+      "specs": "14 Guests \u00e2\u20ac\u00a2 5 Cabins \u00e2\u20ac\u00a2 5 Crew \u00e2\u20ac\u00a2 22 Knots",
+      "dayRate": "$14,000 / day",
+      "amenities": [
+        "Beach Club Platform",
+        "Full Scuba Gear",
+        "Master Suite Balcony"
+      ],
+      "image": "https://images.unsplash.com/photo-1569263979104-865ab7cd8d17?auto=format&fit=crop&w=1200&q=80"
+    }
+  ],
+  "destinations": [
+    "Exumas & Nassau Cays",
+    "Bimini Weekend Getaway",
+    "Miami Coastal Sunset Cruise"
+  ],
+  "certifications": [
+    "MYBA Certified",
+    "Licensed Master Captains",
+    "Full Commercial Marine Insurance"
+  ],
+  "bookingCtaUrl": "https://cal.com/your-agency/yacht-consult"
+}
