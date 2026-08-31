@@ -48,6 +48,13 @@ function initAnimations() {
 
   function setupScrollAnimation() {
     if (isVideoSetup) return;
+    
+    // Wait until we have a valid duration
+    if (!video.duration || isNaN(video.duration)) {
+      setTimeout(setupScrollAnimation, 100);
+      return;
+    }
+    
     isVideoSetup = true;
     
     // Pause the video immediately so it doesn't play naturally
@@ -64,7 +71,7 @@ function initAnimations() {
 
     // Animate video current time from 0 to duration
     tl.to(video, {
-      currentTime: video.duration || 10,
+      currentTime: video.duration,
       ease: "none"
     });
   }
