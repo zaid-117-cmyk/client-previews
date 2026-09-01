@@ -107,10 +107,20 @@ def generate_preview(business_name, city, overview_text, api_key=None):
         json.dump(config_data, f, indent=2)
         
     # Copy frontend assets to client folder
-    for file_name in ["index.html", "style.css", "main.js", "video_smooth.mp4"]:
+    for file_name in ["index.html", "style.css", "main.js"]:
         src = os.path.join(base_dir, file_name)
         if os.path.exists(src):
-            shutil.copy(src, os.path.join(target_dir, file_name))
+            # If it's index.html, update the video path to point to the root folder
+            if file_name == "index.html":
+                with open(src, "r") as html_file:
+                    html_content = html_file.read()
+                html_content = html_content.replace('src="./video_smooth.mp4"', 'src="../../video_smooth.mp4"')
+                html_content = html_content.replace("src='video_smooth.mp4'", "src='../../video_smooth.mp4'")
+                html_content = html_content.replace('src="video_smooth.mp4"', 'src="../../video_smooth.mp4"')
+                with open(os.path.join(target_dir, file_name), "w") as html_dest:
+                    html_dest.write(html_content)
+            else:
+                shutil.copy(src, os.path.join(target_dir, file_name))
     
     print(f"[SUCCESS] Preview generated successfully!")
     print(f"[PATH] Local Path: {target_dir}")
