@@ -114,9 +114,8 @@ def generate_preview(business_name, city, overview_text, api_key=None):
             if file_name == "index.html":
                 with open(src, "r") as html_file:
                     html_content = html_file.read()
-                html_content = html_content.replace('src="./video_smooth.mp4"', 'src="../../video_smooth.mp4"')
-                html_content = html_content.replace("src='video_smooth.mp4'", "src='../../video_smooth.mp4'")
-                html_content = html_content.replace('src="video_smooth.mp4"', 'src="../../video_smooth.mp4"')
+                html_content = html_content.replace('src="assets/hero-bg.mp4"', 'src="../../assets/hero-bg.mp4"')
+                html_content = html_content.replace("src='assets/hero-bg.mp4'", "src='../../assets/hero-bg.mp4'")
                 with open(os.path.join(target_dir, file_name), "w") as html_dest:
                     html_dest.write(html_content)
             else:
