@@ -115,7 +115,7 @@ def run_auto_responder():
         # 2. Construct Demo URL
         import re
         slug = re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-')
-        demo_url = f"https://{github_username}.github.io/ai-website-outreach/previews/{slug}/"
+        demo_url = f"https://elevateweb.me/previews/{slug}/"
         
         # 3. Send Email
         send_demo_link(smtp_server, smtp_port, email_user, email_pass, prospect["email"], name, demo_url)
