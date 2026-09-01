@@ -56,11 +56,11 @@ def check_for_replies(imap_server, email_user, email_pass):
         print(f"IMAP Error: {e}")
         return []
 
-def send_demo_link(smtp_server, smtp_port, email_user, email_pass, to_email, business_name, demo_url):
+def send_demo_link(smtp_server, smtp_port, email_user, email_pass, to_email, business_name, demo_url, sender_alias=None):
     print(f"Sending demo link to {to_email}...")
     msg = EmailMessage()
     msg['Subject'] = f"Re: Quick question regarding {business_name}'s website"
-    msg['From'] = email_user
+    msg['From'] = sender_alias or email_user
     msg['To'] = to_email
     
     body = f"""Hi there,
@@ -118,7 +118,8 @@ def run_auto_responder():
         demo_url = f"https://elevateweb.me/client-previews/previews/{slug}/"
         
         # 3. Send Email
-        send_demo_link(smtp_server, smtp_port, email_user, email_pass, prospect["email"], name, demo_url)
+        sender_alias = os.getenv("SENDER_ALIAS", "hello@elevateweb.me")
+        send_demo_link(smtp_server, smtp_port, email_user, email_pass, prospect["email"], name, demo_url, sender_alias)
 
 if __name__ == "__main__":
     run_auto_responder()
