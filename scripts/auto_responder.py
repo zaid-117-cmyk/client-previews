@@ -38,8 +38,12 @@ def check_for_replies(imap_server, email_user, email_pass):
                     else:
                         body = msg.get_payload(decode=True).decode()
                     
-                    if "yes" in body.lower() or "sure" in body.lower() or "send" in body.lower():
-                        print(f"Found positive reply from {sender}. Subject: {subject}")
+                    # STRICT FILTER: Only process emails that are replies to our specific campaign
+                    subject_lower = str(subject).lower() if subject else ""
+                    is_campaign_reply = "quick question regarding" in subject_lower
+
+                    if is_campaign_reply and ("yes" in body.lower() or "sure" in body.lower() or "send" in body.lower()):
+                        print(f"Found positive lead reply from {sender}. Subject: {subject}")
                         # In a real scenario, we'd look up the business details from a CRM/DB using the email
                         # For now, we mock the business name from the sender's domain or name
                         business_name = sender.split('<')[0].strip() or "Prospect Business"
