@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Lead Dashboard V2</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Marked.js for markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1><i class="fa-solid fa-rocket"></i> V2 Command Center</h1>
+            <p>Live tracking for <strong>elevateweb.me</strong></p>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchTab('campaign')">Campaigns</button>
+                <button class="tab-btn" onclick="switchTab('prospector')">Lead Prospector</button>
+            </div>
+        </header>
+
+        <!-- CAMPAIGN TAB -->
+        <div id="tab-campaign" class="tab-content active">
+            <section class="metrics">
+                <div class="metric-card glass">
+                    <i class="fa-solid fa-paper-plane metric-icon"></i>
+                    <h2 id="total-sent">0</h2>
+                    <p>Emails Sent</p>
+                </div>
+                <div class="metric-card glass">
+                    <i class="fa-solid fa-reply metric-icon"></i>
+                    <h2 id="total-replied">0</h2>
+                    <p>Positive Replies</p>
+                </div>
+                <div class="metric-card glass">
+                    <i class="fa-solid fa-bolt metric-icon"></i>
+                    <h2 id="conversion-rate">0%</h2>
+                    <p>Conversion Rate</p>
+                </div>
+            </section>
+
+            <section class="table-section glass">
+                <div class="table-header">
+                    <h2>Campaign Leads</h2>
+                    <button id="refresh-btn" onclick="fetchData()"><i class="fa-solid fa-rotate"></i> Refresh Data</button>
+                </div>
+                <div class="table-container">
+                    <table id="leads-table">
+                        <thead>
+                            <tr>
+                                <th>Company</th>
+                                <th>Contact</th>
+                                <th>Sent At</th>
+                                <th>Status</th>
+                                <th>Score</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+        <!-- PROSPECTOR TAB -->
+        <div id="tab-prospector" class="tab-content glass" style="padding: 2rem;">
+            <h2><i class="fa-solid fa-magnifying-glass"></i> AI Lead Prospector</h2>
+            <p style="color:var(--text-muted); margin-bottom: 2rem;">Generate highly targeted Boolean search queries for Apollo.io and Google.</p>
+            
+            <div class="prospector-form">
+                <div class="input-group">
+                    <label>Target Niche</label>
+                    <input type="text" id="niche-input" value="Yacht Charters" placeholder="e.g. Private Jets">
+                </div>
+                <div class="input-group">
+                    <label>Target City</label>
+                    <input type="text" id="city-input" value="Miami" placeholder="e.g. Dubai">
+                </div>
+                <button id="generate-prospects-btn" onclick="generateProspects()"><i class="fa-solid fa-wand-magic-sparkles"></i> Generate Queries</button>
+            </div>
+
+            <div id="prospector-results" class="prospector-results" style="display:none; margin-top:2rem;">
+                <!-- Markdown injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- CHAT MODAL -->
+    <div id="chat-modal" class="modal">
+        <div class="modal-content glass">
+            <div class="modal-header">
+                <h3 id="chat-title">Chat History</h3>
+                <span class="close-modal" onclick="closeChat()">&times;</span>
+            </div>
+            <div id="chat-body" class="chat-body">
+                <!-- Chat messages injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

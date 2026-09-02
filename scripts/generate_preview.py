@@ -97,7 +97,7 @@ def generate_preview(business_name, city, overview_text, api_key=None):
     
     if not config_data:
         print("Using base template config with populated parameters...")
-        with open(os.path.join(base_dir, "siteConfig.json"), "r") as f:
+        with open(os.path.join(base_dir, "yacht_template", "siteConfig.json"), "r") as f:
             config_data = json.load(f)
         config_data["companyName"] = business_name
         config_data["baseLocation"] = city
@@ -108,7 +108,7 @@ def generate_preview(business_name, city, overview_text, api_key=None):
         
     # Copy frontend assets to client folder
     for file_name in ["index.html", "style.css", "main.js"]:
-        src = os.path.join(base_dir, file_name)
+        src = os.path.join(base_dir, "yacht_template", file_name)
         if os.path.exists(src):
             # If it's index.html, update the video path to point to the root folder
             if file_name == "index.html":

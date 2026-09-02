@@ -1,119 +1,47 @@
-
 gsap.registerPlugin(ScrollTrigger);
 
-document.addEventListener("DOMContentLoaded", async () => {
-  // Load dynamic data
-  let config = {};
-  try {
-    const response = await fetch('./siteConfig.json');
-    if (response.ok) {
-      config = await response.json();
-    }
-  } catch (e) {
-    console.warn("Could not load siteConfig.json, using defaults.");
-  }
-  
-  // Populate DOM
-  if (config.heroTitle) document.getElementById('hero-title').innerHTML = config.heroTitle;
-  if (config.heroSubtitle) document.getElementById('hero-subtitle').innerHTML = config.heroSubtitle;
-  
-  if (config.services && config.services.length >= 2) {
-    document.getElementById('service-1-title').innerHTML = config.services[0].title;
-    document.getElementById('service-1-desc').innerHTML = config.services[0].desc;
-    document.getElementById('service-2-title').innerHTML = config.services[1].title;
-    document.getElementById('service-2-desc').innerHTML = config.services[1].desc;
-  }
-  
-  if (config.companyName) {
-    document.getElementById('footer-biz-name').innerHTML = config.companyName;
-    document.title = config.companyName + " - Private Yacht Charters";
-  }
-  
-  if (config.bookingCtaUrl) {
-    document.getElementById('contact-btn').href = config.bookingCtaUrl;
-  }
-  
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  initAnimations();
+// Initialize Lenis for Momentum Scrolling
+const lenis = new Lenis({
+  duration: 1.0, // Slightly faster for a lighter feel
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  smooth: true
 });
 
-function initAnimations() {
-  const video = document.getElementById("hero-video");
+lenis.on('scroll', ScrollTrigger.update);
 
-  // Force video to load
-  video.load();
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
+});
+gsap.ticker.lagSmoothing(0);
 
-  let isVideoSetup = false;
+// Animations once DOM is loaded
+document.addEventListener("DOMContentLoaded", () => {
 
-  function setupScrollAnimation() {
-    if (isVideoSetup) return;
-    
-    // Wait until we have a valid duration
-    if (!video.duration || isNaN(video.duration)) {
-      setTimeout(setupScrollAnimation, 100);
-      return;
-    }
-    
-    isVideoSetup = true;
-    
-    // Pause the video immediately so it doesn't play naturally
-    video.pause();
-
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".content-overlay",
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 1, // Smooth scrubbing
-      }
-    });
-
-    // Animate video current time from 0 to duration
-    tl.to(video, {
-      currentTime: video.duration,
-      ease: "none"
-    });
-  }
-
-  // Fallback in case loadedmetadata doesn't fire (e.g. cached video)
-  if (video.readyState >= 1) {
-    setupScrollAnimation();
-  } else {
-    video.addEventListener("loadedmetadata", setupScrollAnimation);
-  }
-
-  // Animate the text sections fading in and out
-  const sections = document.querySelectorAll(".section");
-  
-  sections.forEach((sec, i) => {
-    // Fade in
-    gsap.fromTo(sec.children, 
-      { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        scrollTrigger: {
-          trigger: sec,
-          start: "top 80%",
-          end: "center center",
-          scrub: true
-        }
-      }
-    );
-    
-    // Fade out (skip for the contact section so it remains visible at the bottom)
-    if (!sec.classList.contains("contact-section")) {
-      gsap.to(sec.children, {
-        y: -50,
-        opacity: 0,
-        scrollTrigger: {
-          trigger: sec,
-          start: "center center",
-          end: "bottom 20%",
-          scrub: true
-        }
-      });
-    }
+  // Hero Text Animation (SplitText style fade up)
+  gsap.from(".reveal-text", {
+    y: 30, // Reduced from 50px for a more subtle, minimal entrance
+    opacity: 0,
+    duration: 1.0, // Faster
+    stagger: 0.15,
+    ease: "power3.out",
+    delay: 0.1
   });
-}
+
+  // Scroll Reveal Animations for all cards and text
+  const revealElements = document.querySelectorAll(".scroll-reveal");
+
+  revealElements.forEach((el) => {
+    gsap.from(el, {
+      y: 40, // Reduced from 60px
+      opacity: 0,
+      duration: 0.8, // Faster, snappier reveal
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 90%", // Trigger slightly earlier
+        toggleActions: "play none none reverse"
+      }
+    });
+  });
+
+});

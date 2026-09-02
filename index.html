@@ -1,57 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luxury Yachts</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElevateWeb | We Build Digital Experiences</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  
+  <!-- GSAP & Lenis for Smooth Scrolling -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
 </head>
 <body>
-  
-  <div class="video-container">
-    <video id="hero-video" src="assets/hero-bg.mp4" muted playsinline preload="auto"></video>
-  </div>
 
-  <div class="content-overlay">
-    <section class="section section-1">
-      <h1 class="glass-text" id="hero-title">Redefining Luxury</h1>
-      <p id="hero-subtitle">Experience the ocean like never before.</p>
-    </section>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">ElevateWeb</div>
+    <a href="#contact" class="nav-cta">Start a Project</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero content-wrapper" style="display: flex; align-items: center; justify-content: space-between; gap: 4rem; padding-top: 15vh;">
+    <div style="flex: 1; z-index: 1;">
+      <h1 class="hero-title reveal-text" style="font-size: 4.5vw;">We Build Digital<br>Experiences That <span class="accent">Dominate.</span></h1>
+      <p class="hero-subtitle reveal-text">Elite web design, e-commerce solutions, and lead-generation automation for forward-thinking brands.</p>
+    </div>
+    <div class="scroll-reveal" style="flex: 1; display: flex; justify-content: flex-end;">
+      <img src="./assets/hero-light.png" alt="Clean Minimalist Workspace" style="width: 100%; max-width: 600px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); object-fit: cover;">
+    </div>
+  </section>
+
+  <!-- Why Us Section -->
+  <section class="why-us content-wrapper" style="display: flex; align-items: center; justify-content: space-between; gap: 4rem; flex-direction: row-reverse;">
+    <div class="clean-card scroll-reveal" style="flex: 1;">
+      <h2>Not Just Web Designers. <br>Growth Partners.</h2>
+      <p>Your website shouldn't just look pretty. It should be a high-performance machine engineered to turn cold traffic into high-paying clients. We combine bleeding-edge AI automation with premium agency-grade aesthetics to put you lightyears ahead of your competition.</p>
+    </div>
+    <div class="scroll-reveal" style="flex: 1;">
+      <img src="./assets/tech-light.png" alt="Clean UI Dashboard" style="width: 100%; max-width: 600px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); object-fit: cover;">
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services content-wrapper">
+    <h2 class="section-heading scroll-reveal">Our Arsenal</h2>
     
-    <section class="section section-2">
-      <h2 class="glass-text" id="service-1-title">Impeccable Design</h2>
-      <p id="service-1-desc">Every curve crafted for elegance and speed.</p>
-    </section>
-
-    <section class="section section-3">
-      <h2 class="glass-text" id="service-2-title">Unparalleled Comfort</h2>
-      <p id="service-2-desc">Your sanctuary on the sea.</p>
-    </section>
-
-    <!-- Phase 3: Contact Form & Footer -->
-    <section class="section contact-section">
-      <div class="contact-card glass-text">
-        <h2 id="contact-title">Inquire Now</h2>
-        <p id="contact-subtitle">Take the first step towards owning your dream yacht.</p>
-        <form class="contact-form">
-          <input type="text" placeholder="Full Name" required />
-          <input type="email" placeholder="Email Address" required />
-          <textarea placeholder="Your Message" rows="4" required></textarea>
-          <a id="contact-btn" href="#" target="_blank" style="display: block; text-align: center; text-decoration: none; padding: 1rem; background: #fff; color: #000; font-weight: 600; border-radius: 8px; text-transform: uppercase; letter-spacing: 2px;">Send Inquiry</a>
-        </form>
+    <div class="services-grid">
+      <div class="clean-card service-card scroll-reveal" style="display: flex; flex-direction: column; gap: 1rem;">
+        <img src="./assets/service1.png" alt="AI Web Design Prototype" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); object-fit: cover; aspect-ratio: 16/9;">
+        <h3 class="accent" style="margin-top: 1rem;">01 // AI-Driven Web Design</h3>
+        <p>Ultra-fast, meticulously crafted landing pages and websites with 3D elements and momentum scrolling that command authority and trust.</p>
       </div>
-    </section>
-  </div>
+      
+      <div class="clean-card service-card scroll-reveal" style="display: flex; flex-direction: column; gap: 1rem;">
+        <img src="./assets/service2.png" alt="Elite E-Commerce Dashboard" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); object-fit: cover; aspect-ratio: 16/9;">
+        <h3 class="accent" style="margin-top: 1rem;">02 // Elite E-Commerce</h3>
+        <p>High-converting Shopify and custom storefronts designed for maximum Average Order Value (AOV) and frictionless checkouts.</p>
+      </div>
+      
+      <div class="clean-card service-card scroll-reveal" style="display: flex; flex-direction: column; gap: 1rem;">
+        <img src="./assets/service3.png" alt="Lead Automation Dashboard" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); object-fit: cover; aspect-ratio: 16/9;">
+        <h3 class="accent" style="margin-top: 1rem;">03 // Lead Automation</h3>
+        <p>Custom CRM dashboards, automated outreach pipelines, and AI assistants that prospect and qualify leads for you while you sleep.</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- The Process -->
+  <section class="process content-wrapper">
+    <h2 class="section-heading scroll-reveal">How We Win</h2>
+    <div class="process-steps">
+      <div class="step scroll-reveal">
+        <span class="step-num">1</span>
+        <h4>Discovery</h4>
+        <p>We analyze your market, your competitors, and identify exactly how to position you as the premium authority.</p>
+      </div>
+      <div class="step scroll-reveal">
+        <span class="step-num">2</span>
+        <h4>Development</h4>
+        <p>We build your digital infrastructure using the absolute latest web technologies.</p>
+      </div>
+      <div class="step scroll-reveal">
+        <span class="step-num">3</span>
+        <h4>Domination</h4>
+        <p>We launch the site, plug in the lead automation systems, and watch the high-quality inquiries pour in.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact content-wrapper">
+    <div class="clean-card contact-box scroll-reveal">
+      <h2>Ready to Elevate?</h2>
+      <p>Drop us a line below or email us directly at <strong>hello@elevateweb.me</strong></p>
+      <form class="contact-form" action="mailto:hello@elevateweb.me" method="post" enctype="text/plain">
+        <input type="text" name="Name" placeholder="Your Name" required>
+        <input type="email" name="Email" placeholder="Your Email" required>
+        <textarea name="Message" placeholder="Tell us about your project..." rows="5" required></textarea>
+        <button type="submit">Send Inquiry</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
-    <p>&copy; <span id="year">2026</span> <span id="footer-biz-name">Luxury Yachts</span>. All rights reserved.</p>
+    <p>&copy; 2026 ElevateWeb. All rights reserved.</p>
   </footer>
 
-  <script type="module" src="./main.js"></script>
+  <script src="./main.js"></script>
 </body>
 </html>

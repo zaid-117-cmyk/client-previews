@@ -18,6 +18,19 @@ def check_for_replies(imap_server, email_user, email_pass):
         status, messages = mail.search(None, '(UNSEEN)')
         email_ids = messages[0].split()
         
+        # Load Whitelist
+        whitelist_emails = set()
+        log_path = "dashboard/data/campaign_log.json"
+        if os.path.exists(log_path):
+            import json
+            try:
+                with open(log_path, 'r') as f:
+                    logs = json.load(f)
+                    for log in logs:
+                        whitelist_emails.add(log.get("email", "").lower())
+            except Exception as e:
+                print(f"Error reading whitelist: {e}")
+
         prospects_to_process = []
         
         for e_id in email_ids:
@@ -38,21 +51,39 @@ def check_for_replies(imap_server, email_user, email_pass):
                     else:
                         body = msg.get_payload(decode=True).decode()
                     
-                    # STRICT FILTER: Only process emails that are replies to our specific campaign
+                    # STRICT FILTER: Check if email is in whitelist
+                    sender_email = sender.split('<')[-1].strip('>').lower()
+                    if sender_email not in whitelist_emails:
+                        continue
+
+                    # Check subject match
                     subject_lower = str(subject).lower() if subject else ""
                     is_campaign_reply = "quick question regarding" in subject_lower
 
                     if is_campaign_reply and ("yes" in body.lower() or "sure" in body.lower() or "send" in body.lower()):
                         print(f"Found positive lead reply from {sender}. Subject: {subject}")
-                        # In a real scenario, we'd look up the business details from a CRM/DB using the email
-                        # For now, we mock the business name from the sender's domain or name
                         business_name = sender.split('<')[0].strip() or "Prospect Business"
-                        prospects_to_process.append({
-                            "email": sender,
-                            "business_name": business_name,
-                            "city": "Unknown City"
-                        })
                         
+                        # Use Gemini to Score the Lead
+                        score = "WARM"
+                        import google.generativeai as genai
+                        api_key = os.getenv("GEMINI_API_KEY")
+                        if api_key:
+                            try:
+                                genai.configure(api_key=api_key)
+                                model = genai.GenerativeModel('gemini-1.5-flash')
+                                prompt = f"Analyze this reply to a cold email: '{body}'. Rate the lead's intent as HOT, WARM, or COLD. Return ONLY the single word."
+                                response = model.generate_content(prompt)
+                                score = response.text.strip().upper()
+                                if score not in ["HOT", "WARM", "COLD"]: score = "WARM"
+                            except Exception: pass
+
+                        prospects_to_process.append({
+                            "email": sender_email,
+                            "business_name": business_name,
+                            "city": "Unknown City",
+                            "score": score
+                        })
         mail.close()
         mail.logout()
         return prospects_to_process
@@ -111,14 +142,20 @@ def run_auto_responder():
     for prospect in prospects:
         name = prospect["business_name"]
         city = prospect["city"]
+        score = prospect.get("score", "WARM")
         
+        import re
+        slug = re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-')
+
+        # Write score.json so generate_preview commits it
+        import json
+        os.makedirs(f"previews/{slug}", exist_ok=True)
+        with open(f"previews/{slug}/score.json", "w") as f:
+            json.dump({"score": score}, f)
+
         # 1. Call generate_preview.py
         print(f"Generating preview for {name}...")
         subprocess.run(["python", "scripts/generate_preview.py", "--name", name, "--city", city, "--auto-commit"])
-        
-        # 2. Construct Demo URL
-        import re
-        slug = re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-')
         demo_url = f"https://elevateweb.me/client-previews/previews/{slug}/"
         
         # 3. Send Email
