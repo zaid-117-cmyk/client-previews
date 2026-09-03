@@ -152,5 +152,180 @@
     "company": "Arabian Excursions",
     "city": "Dubai",
     "sent_at": "2026-09-03T13:28:28.798262"
+  },
+  {
+    "email": "tony@kitsonyachts.com",
+    "first_name": "Tony",
+    "company": "Kitson Yachts",
+    "city": "Miami Beach",
+    "sent_at": "2026-09-03T13:34:55.555023"
+  },
+  {
+    "email": "barin@yachtcreators.com",
+    "first_name": "Barin",
+    "company": "YachtCreators",
+    "city": "Fort Lauderdale",
+    "sent_at": "2026-09-03T13:35:07.132943"
+  },
+  {
+    "email": "laurens@boattripsclub.com",
+    "first_name": "Laurens",
+    "company": "Boat Trips Club",
+    "city": "Dubai",
+    "sent_at": "2026-09-03T13:35:18.808553"
+  },
+  {
+    "email": "jp@tremendous.com",
+    "first_name": "Tremendous",
+    "company": "Tremendous Trips Tourism",
+    "city": "Dubai",
+    "sent_at": "2026-09-03T13:35:30.495878"
+  },
+  {
+    "email": "stephen@catamaranguru.com",
+    "first_name": "Stephen",
+    "company": "Catamaran Gurus",
+    "city": "Fort Lauderdale",
+    "sent_at": "2026-09-03T13:35:42.080873"
+  },
+  {
+    "email": "estelle@catamaranguru.com",
+    "first_name": "Estelle",
+    "company": "Catamaran Gurus",
+    "city": "Fort Lauderdale",
+    "sent_at": "2026-09-03T13:35:53.967990"
+  },
+  {
+    "email": "lsanders@hsbroward.com",
+    "first_name": "Linda",
+    "company": "Black Standard",
+    "city": "Fort Lauderdale",
+    "sent_at": "2026-09-03T13:36:06.033230"
+  },
+  {
+    "email": "jp.ballesteros@boatpassmiami.com",
+    "first_name": "Juan",
+    "company": "BoatPass",
+    "city": "Miami",
+    "sent_at": "2026-09-03T13:36:17.825014"
+  },
+  {
+    "email": "jose@1oceanyachts.com",
+    "first_name": "Jose",
+    "company": "1 Ocean Yachts Group",
+    "city": "Miami",
+    "sent_at": "2026-09-03T13:36:29.394366"
+  },
+  {
+    "email": "manuel@aquaexperiences.com",
+    "first_name": "Manuel",
+    "company": "Aqua Experiences",
+    "city": "Fort Lauderdale",
+    "sent_at": "2026-09-03T13:36:41.045331"
+  },
+  {
+    "email": "justin@justcharterit.com",
+    "first_name": "Justin",
+    "company": "JustCharterIt",
+    "city": "Saint Petersburg",
+    "sent_at": "2026-09-03T13:36:52.635897"
+  },
+  {
+    "email": "anais@ouroboros-travel.com",
+    "first_name": "Anais",
+    "company": "Ouroboros Travel",
+    "city": "Dubai",
+    "sent_at": "2026-09-03T13:37:04.110893"
+  },
+  {
+    "email": "james@jfayacht.com",
+    "first_name": "James",
+    "company": "JFA Yacht & Ship",
+    "city": "Jupiter",
+    "sent_at": "2026-09-03T13:37:15.747217"
+  },
+  {
+    "email": "michaelanne@lauderdale30a.com",
+    "first_name": "Michaelanne",
+    "company": "Salt Air 30a",
+    "city": "Rosemary Beach",
+    "sent_at": "2026-09-03T13:37:27.343037"
+  },
+  {
+    "email": "ben@eliteyachtgroup.com",
+    "first_name": "Ben",
+    "company": "Elite Yacht Group",
+    "city": "Fort Lauderdale",
+    "sent_at": "2026-09-03T13:37:38.986630"
+  },
+  {
+    "email": "sirio@invictusyachts.mc",
+    "first_name": "Sirio",
+    "company": "Invictus Yachts Services",
+    "city": "",
+    "sent_at": "2026-09-03T13:37:50.500039"
+  },
+  {
+    "email": "glynn@ethereal-yachts.com",
+    "first_name": "Glynn",
+    "company": "Ethereal Yachts",
+    "city": "Fort Lauderdale",
+    "sent_at": "2026-09-03T13:38:02.069263"
+  },
+  {
+    "email": "aqsa.zafar@noonyachts.com",
+    "first_name": "Aqsa",
+    "company": "Noon Yachts",
+    "city": "Dubai",
+    "sent_at": "2026-09-03T13:38:13.706260"
+  },
+  {
+    "email": "hadi@universaljets.com",
+    "first_name": "Hadi",
+    "company": "Universal Jets",
+    "city": "Dubai",
+    "sent_at": "2026-09-03T13:38:25.370466"
+  },
+  {
+    "email": "brandon@kitsonyachts.com",
+    "first_name": "Brandon",
+    "company": "Kitson Yachts",
+    "city": "Fort Lauderdale",
+    "sent_at": "2026-09-03T13:38:37.261587"
+  },
+  {
+    "email": "kkennedy@avyachts.com",
+    "first_name": "Kathy",
+    "company": "AVYACHTS",
+    "city": "Fort Lauderdale",
+    "sent_at": "2026-09-03T13:38:48.853109"
+  },
+  {
+    "email": "ozzy@selectyachtsales.com",
+    "first_name": "Jen",
+    "company": "Select Yacht Sales",
+    "city": "Boca Raton",
+    "sent_at": "2026-09-03T13:39:00.667307"
+  },
+  {
+    "email": "p.chadel@yachtsidegroup.com",
+    "first_name": "Philippe",
+    "company": "YACHTSIDE MONACO",
+    "city": "Monaco",
+    "sent_at": "2026-09-03T13:39:12.200057"
+  },
+  {
+    "email": "sylvester@ssmarinov.com",
+    "first_name": "Sylvester",
+    "company": "SSMARINOV-Your Luxury Council",
+    "city": "Monaco",
+    "sent_at": "2026-09-03T13:39:23.799857"
+  },
+  {
+    "email": "brent@aluxaero.com",
+    "first_name": "Brent",
+    "company": "Aluxaero",
+    "city": "Palm Beach",
+    "sent_at": "2026-09-03T13:39:35.464950"
   }
 ]
