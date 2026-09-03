@@ -439,5 +439,61 @@
     "company": "Tiki Pub",
     "city": "Fort Myers",
     "sent_at": "2026-09-03T13:46:11.669662"
+  },
+  {
+    "email": "captain@yachthampton.com",
+    "first_name": "Joseph",
+    "company": "Yacht Hampton",
+    "city": "Sag Harbor",
+    "sent_at": "2026-09-03T13:52:33.533032"
+  },
+  {
+    "email": "karen@nicholsonyachts.com",
+    "first_name": "Karen",
+    "company": "Nicholson Yachts",
+    "city": "Newport",
+    "sent_at": "2026-09-03T13:52:45.039755"
+  },
+  {
+    "email": "ryan@latitudeyacht.com",
+    "first_name": "Ryan",
+    "company": "Latitude Yacht",
+    "city": "Newport",
+    "sent_at": "2026-09-03T13:52:56.598355"
+  },
+  {
+    "email": "charles-etienne.devanneaux@naosyachtsales.com",
+    "first_name": "Charles-Etienne",
+    "company": "NAOS YACHTS",
+    "city": "Marina del Rey",
+    "sent_at": "2026-09-03T13:53:08.158373"
+  },
+  {
+    "email": "jhirschler@sightsailing.com",
+    "first_name": "John",
+    "company": "Sightsailing Of Newport",
+    "city": "Newport",
+    "sent_at": "2026-09-03T13:53:19.709853"
+  },
+  {
+    "email": "anavarro@ocboatrental.com",
+    "first_name": "Andy",
+    "company": "Captain America Boat Rentals",
+    "city": "Newport Beach",
+    "sent_at": "2026-09-03T13:53:31.309495"
+  },
+  {
+    "email": "pm@xploreryachts.com",
+    "first_name": "Paul",
+    "company": "Ocean Xplorer Yachts",
+    "city": "Newport",
+    "sent_at": "2026-09-03T13:53:43.339295"
+  },
+  {
+    "email": "john@sandiegobaycruises.com",
+    "first_name": "John",
+    "company": "San Diego Bay Cruises",
+    "city": "San Diego",
+    "sent_at": "2026-09-03T13:53:54.963184"
   }
 ]
