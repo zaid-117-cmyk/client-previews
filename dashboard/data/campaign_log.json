@@ -327,5 +327,117 @@
     "company": "Aluxaero",
     "city": "Palm Beach",
     "sent_at": "2026-09-03T13:39:35.464950"
+  },
+  {
+    "email": "jg@bluecoralboatrental.com",
+    "first_name": "Jeroen",
+    "company": "Blue Coral Boat Rental",
+    "city": "Cape Coral",
+    "sent_at": "2026-09-03T13:43:19.309988"
+  },
+  {
+    "email": "sally@keywestadventures.com",
+    "first_name": "Sally",
+    "company": "Key West Adventures",
+    "city": "Key West",
+    "sent_at": "2026-09-03T13:43:30.730193"
+  },
+  {
+    "email": "lamar.godwin@uncommonconcierge.com",
+    "first_name": "Lamar",
+    "company": "Uncommon Concierge",
+    "city": "Fort Lauderdale",
+    "sent_at": "2026-09-03T13:43:42.174127"
+  },
+  {
+    "email": "donna@yachtcrew.com",
+    "first_name": "Donna",
+    "company": "Palm Beach Yachts International",
+    "city": "West Palm Beach",
+    "sent_at": "2026-09-03T13:43:53.693482"
+  },
+  {
+    "email": "stan@azureyachtgroup.com",
+    "first_name": "Stanislav",
+    "company": "Azure Yacht Group",
+    "city": "Fort Lauderdale",
+    "sent_at": "2026-09-03T13:44:05.219162"
+  },
+  {
+    "email": "fs@nauticall.com",
+    "first_name": "Fabrizio",
+    "company": "NauticALL",
+    "city": "Miami",
+    "sent_at": "2026-09-03T13:44:16.651374"
+  },
+  {
+    "email": "eking@bowlinecptl.com",
+    "first_name": "Ethan",
+    "company": "Bowline Capital",
+    "city": "Miami",
+    "sent_at": "2026-09-03T13:44:28.359268"
+  },
+  {
+    "email": "jmorris@whitecapproducts.com",
+    "first_name": "Jason",
+    "company": "Whitecap",
+    "city": "DeLand",
+    "sent_at": "2026-09-03T13:44:39.849617"
+  },
+  {
+    "email": "abdullah@flameyachtdubai.com",
+    "first_name": "Abdullah",
+    "company": "Flame Yacht Rentals",
+    "city": "Dubai",
+    "sent_at": "2026-09-03T13:44:51.290976"
+  },
+  {
+    "email": "deepa@roopstravels.com",
+    "first_name": "Deepa",
+    "company": "Roops Travels",
+    "city": "Dubai",
+    "sent_at": "2026-09-03T13:45:02.724356"
+  },
+  {
+    "email": "lilly@ytti.com",
+    "first_name": "Lilly",
+    "company": "Your Ticket Travel",
+    "city": "Fort Lauderdale",
+    "sent_at": "2026-09-03T13:45:14.191714"
+  },
+  {
+    "email": "julia@smartyachts.com",
+    "first_name": "Julia",
+    "company": "SMART YACHTS",
+    "city": "Monaco",
+    "sent_at": "2026-09-03T13:45:25.803519"
+  },
+  {
+    "email": "mh@bluecoralboatrental.com",
+    "first_name": "Mieke",
+    "company": "Blue Coral Boat Rental",
+    "city": "Cape Coral",
+    "sent_at": "2026-09-03T13:45:37.286785"
+  },
+  {
+    "email": "gerry@jupiterdivecenter.com",
+    "first_name": "Gerald",
+    "company": "Jupiter Dive Center",
+    "city": "Jupiter",
+    "sent_at": "2026-09-03T13:45:48.787989"
+  },
+  {
+    "email": "karen@allyachtsworldwide.com",
+    "first_name": "Karen",
+    "company": "All Yachts Worldwide",
+    "city": "Fort Lauderdale",
+    "sent_at": "2026-09-03T13:46:00.201758"
+  },
+  {
+    "email": "stefan@tikipub.com",
+    "first_name": "Stefan",
+    "company": "Tiki Pub",
+    "city": "Fort Myers",
+    "sent_at": "2026-09-03T13:46:11.669662"
   }
 ]
