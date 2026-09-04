@@ -1,5 +1,4 @@
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -7,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Load dynamic data
   let config = {};
   try {
-    const response = await fetch('/siteConfig.json');
+    const response = await fetch('./siteConfig.json');
     if (response.ok) {
       config = await response.json();
     }
