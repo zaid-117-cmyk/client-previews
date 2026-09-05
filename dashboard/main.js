@@ -179,5 +179,50 @@ async function generateProspects() {
     btn.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles"></i> Generate Queries`;
 }
 
+// Scraper Logic
+async function runScraper() {
+    const btn = document.getElementById('run-scraper-btn');
+    const statusText = document.getElementById('scraper-status');
+    const resContainer = document.getElementById('scraper-results-container');
+    const tbody = document.querySelector('#scraper-table tbody');
+    
+    const location = document.getElementById('scraper-location').value;
+    const num_results = document.getElementById('scraper-count').value;
+
+    btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Scraping Web...`;
+    resContainer.style.display = 'none';
+    tbody.innerHTML = '';
+    
+    try {
+        const res = await fetch('/api/scrape_leads', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ location, num_results })
+        });
+        const data = await res.json();
+        
+        resContainer.style.display = 'block';
+        if(data.error) {
+            statusText.innerHTML = `<span style="color:#ff4757">Error: ${data.error}</span>`;
+        } else {
+            statusText.innerHTML = `<span style="color:#4ade80">Found ${data.leads.length} leads in ${location}</span>`;
+            data.leads.forEach(lead => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><strong>${lead.Company}</strong></td>
+                    <td>${lead['First Name']}<br><small style="color:var(--text-muted)">${lead.Email}</small></td>
+                    <td><a href="${lead.Website}" target="_blank" style="color:var(--primary)">Visit <i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+    } catch(e) {
+        resContainer.style.display = 'block';
+        statusText.innerHTML = `<span style="color:#ff4757">Failed to connect to server.</span>`;
+    }
+    
+    btn.innerHTML = `<i class="fa-solid fa-play"></i> Start Scraping`;
+}
+
 // Initial load
 fetchData();

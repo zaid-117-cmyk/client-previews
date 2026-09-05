@@ -5,7 +5,9 @@ import imaplib
 import email
 from email.header import decode_header
 import google.generativeai as genai
-
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'scripts'))
+import agent_scraper
 app = Flask(__name__, static_folder='.', static_url_path='')
 
 @app.route('/')
@@ -124,6 +126,19 @@ def prospector():
                 pass
         print(f"Groq API Error: {error_msg}")
         return jsonify({"error": error_msg}), 500
+
+@app.route('/api/scrape_leads', methods=['POST'])
+def scrape_global_leads():
+    data = request.json or {}
+    location = data.get('location', 'Miami')
+    num_results = data.get('num_results', 15)
+    
+    try:
+        leads = agent_scraper.scrape_leads(location, num_results=int(num_results))
+        return jsonify({"leads": leads})
+    except Exception as e:
+        print(f"Scraping Error: {e}")
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     print("V2 Flask Dashboard running on http://localhost:8000")

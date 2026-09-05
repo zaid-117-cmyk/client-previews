@@ -18,6 +18,7 @@
             <div class="tabs">
                 <button class="tab-btn active" onclick="switchTab('campaign')">Campaigns</button>
                 <button class="tab-btn" onclick="switchTab('prospector')">Lead Prospector</button>
+                <button class="tab-btn" onclick="switchTab('scraper')">Global Scraper</button>
             </div>
         </header>
 
@@ -85,6 +86,50 @@
 
             <div id="prospector-results" class="prospector-results" style="display:none; margin-top:2rem;">
                 <!-- Markdown injected here -->
+            </div>
+        </div>
+
+        <!-- SCRAPER TAB -->
+        <div id="tab-scraper" class="tab-content glass" style="padding: 2rem;">
+            <h2><i class="fa-solid fa-globe"></i> Global Lead Scraper</h2>
+            <p style="color:var(--text-muted); margin-bottom: 2rem;">Automatically scrape email addresses from Yacht Charter websites globally.</p>
+            
+            <div class="prospector-form">
+                <div class="input-group">
+                    <label>City / Location</label>
+                    <input type="text" id="scraper-location" value="Monaco" placeholder="e.g. Monaco">
+                </div>
+                <div class="input-group">
+                    <label>Websites to Scan</label>
+                    <select id="scraper-count" style="padding: 0.8rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.5); color: white;">
+                        <option value="10">10 Websites</option>
+                        <option value="15" selected>15 Websites</option>
+                        <option value="25">25 Websites</option>
+                        <option value="50">50 Websites</option>
+                    </select>
+                </div>
+                <button id="run-scraper-btn" onclick="runScraper()"><i class="fa-solid fa-play"></i> Start Scraping</button>
+            </div>
+
+            <div class="table-section glass" style="margin-top: 2rem; display: none;" id="scraper-results-container">
+                <div class="table-header">
+                    <h2>Scraped Leads</h2>
+                    <span id="scraper-status" style="color: #4ade80;">Success</span>
+                </div>
+                <div class="table-container">
+                    <table id="scraper-table">
+                        <thead>
+                            <tr>
+                                <th>Company</th>
+                                <th>Contact</th>
+                                <th>Website</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

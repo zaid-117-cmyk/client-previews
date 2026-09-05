@@ -1,0 +1,18 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments & secrets
+.env
+.env.local
+
+# Temporary scraper / clipboard files
+cloudflare_html_temp.txt
+cloudflare_main_js_temp.txt
+temp_json.txt
+
+# OS files
+.DS_Store
+Thumbs.db

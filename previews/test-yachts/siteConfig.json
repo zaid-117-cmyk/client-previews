@@ -1,0 +1,13 @@
+{
+  "companyName": "Ocean Bliss Yachts",
+  "baseLocation": "Miami, FL",
+  "heroTitle": "Ultimate Ocean Bliss",
+  "heroSubtitle": "Experience the open water.",
+  "services": [
+    {
+      "title": "Day Charters",
+      "desc": "Relaxing day trips."
+    }
+  ],
+  "bookingCtaUrl": "https://cal.com/your-agency"
+}

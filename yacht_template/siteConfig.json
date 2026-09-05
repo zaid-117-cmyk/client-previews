@@ -23,6 +23,16 @@
       "image": "https://images.unsplash.com/photo-1569263979104-865ab7cd8d17?auto=format&fit=crop&w=1200&q=80"
     }
   ],
+  "services": [
+    {
+      "title": "The Aurelia (92ft Sunseeker)",
+      "desc": "12 Guests • 4 Cabins • 4 Crew • Flybridge Jacuzzi • $9,500 / day"
+    },
+    {
+      "title": "Oceanic Serenity (115ft Majesty)",
+      "desc": "14 Guests • 5 Cabins • 5 Crew • Beach Club Platform • $14,000 / day"
+    }
+  ],
   "destinations": [
     "Exumas & Nassau Cays",
     "Bimini Weekend Getaway",

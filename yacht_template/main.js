@@ -1,20 +1,5 @@
 gsap.registerPlugin(ScrollTrigger);
 
-// Initialize Lenis for Momentum Scrolling
-const lenis = new Lenis({
-  duration: 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  smooth: true
-});
-
-lenis.on('scroll', ScrollTrigger.update);
-
-gsap.ticker.add((time) => {
-  lenis.raf(time * 1000);
-});
-gsap.ticker.lagSmoothing(0);
-
-
 document.addEventListener("DOMContentLoaded", async () => {
   // Load dynamic data
   let config = {};
@@ -31,11 +16,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (config.heroTitle) document.getElementById('hero-title').innerHTML = config.heroTitle;
   if (config.heroSubtitle) document.getElementById('hero-subtitle').innerHTML = config.heroSubtitle;
   
-  if (config.services && config.services.length >= 2) {
-    document.getElementById('service-1-title').innerHTML = config.services[0].title;
-    document.getElementById('service-1-desc').innerHTML = config.services[0].desc;
-    document.getElementById('service-2-title').innerHTML = config.services[1].title;
-    document.getElementById('service-2-desc').innerHTML = config.services[1].desc;
+  const services = config.services || (config.fleet ? config.fleet.map(f => ({ title: f.name, desc: f.specs ? `${f.specs} - ${f.dayRate || ''}` : f.dayRate })) : null);
+  if (services && services.length >= 2) {
+    document.getElementById('service-1-title').innerHTML = services[0].title;
+    document.getElementById('service-1-desc').innerHTML = services[0].desc;
+    document.getElementById('service-2-title').innerHTML = services[1].title;
+    document.getElementById('service-2-desc').innerHTML = services[1].desc;
   }
   
   if (config.companyName) {
@@ -47,7 +33,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById('contact-btn').href = config.bookingCtaUrl;
   }
   
-  document.getElementById('year').textContent = new Date().getFullYear();
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   initAnimations();
 });
@@ -79,7 +66,7 @@ function initAnimations() {
         trigger: ".content-overlay",
         start: "top top",
         end: "bottom bottom",
-        scrub: 1,
+        scrub: 1, // Smooth scrubbing
       }
     });
 
@@ -87,10 +74,7 @@ function initAnimations() {
     tl.to(video, {
       currentTime: video.duration,
       ease: "none"
-    }, 0);
-    
-    // Luxurious 3D Scale Effect
-    tl.fromTo(".video-container", { scale: 1 }, { scale: 1.15, ease: "none" }, 0);
+    });
   }
 
   // Fallback in case loadedmetadata doesn't fire (e.g. cached video)

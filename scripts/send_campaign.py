@@ -6,12 +6,28 @@ import os
 import json
 from datetime import datetime
 
+def load_env():
+    env_file = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.env')
+    if os.path.exists(env_file):
+        try:
+            with open(env_file, 'r', encoding='utf-8') as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith('#') and '=' in line:
+                        k, v = line.split('=', 1)
+                        k, v = k.strip(), v.strip().strip('"').strip("'")
+                        if k not in os.environ:
+                            os.environ[k] = v
+        except Exception:
+            pass
+
+load_env()
+
 # --- Configuration ---
-CSV_FILE = "leads.csv"  # Put your CSV file in the same folder and name it leads.csv
-# Put your actual Gmail and App Password here for the local script:
-SENDER_EMAIL = "shehajj17@gmail.com" 
-APP_PASSWORD = "gxtdyrommghengck"
-SENDER_ALIAS = "hello@elevateweb.me"
+CSV_FILE = "leads.csv"
+SENDER_EMAIL = os.getenv("EMAIL_USER", "shehajj17@gmail.com")
+APP_PASSWORD = os.getenv("EMAIL_PASS", "gxtdyrommghengck")
+SENDER_ALIAS = os.getenv("SENDER_ALIAS", "hello@elevateweb.me")
 # ---------------------
 
 def send_campaign():
@@ -49,7 +65,7 @@ def send_campaign():
             print(f"Drafting email to {first_name} at {company} ({email})...")
 
             msg = EmailMessage()
-            msg['Subject'] = f"Free"
+            msg['Subject'] = f"Quick question regarding {company}'s website"
             msg['From'] = SENDER_ALIAS
             msg['To'] = email
             

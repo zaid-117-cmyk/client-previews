@@ -1,0 +1,13 @@
+{
+  "companyName": "Beverly Estates",
+  "baseLocation": "Beverly Hills, CA",
+  "heroTitle": "Unrivaled Luxury Living",
+  "heroSubtitle": "Discover the most exclusive estates in Beverly Hills.",
+  "services": [
+    {
+      "title": "1042 Villa Drive",
+      "desc": "6 Bed, 8 Bath | Panoramic Ocean Views - $12,500,000"
+    }
+  ],
+  "bookingCtaUrl": "https://cal.com/your-agency"
+}
